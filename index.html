@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>$750 Target Coupon</title>
 
   <style>
@@ -14,28 +15,39 @@
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background: #fff;
-      color: #000;
+      background: #ffffff;
+      color: #000000;
     }
 
-    /* TOP BAR */
+    /* =========================
+       TOP BAR
+    ========================= */
+
     .top-bar {
       width: 100%;
-      color: #fff;
-      text-align: center;
-      font-size: 14px;
-      font-weight: 700;
-      padding: 9px 16px;
 
       position: fixed;
       top: 0;
       left: 0;
+
       z-index: 40;
 
       background: #cc0000;
+
+      color: #ffffff;
+
+      text-align: center;
+
+      font-size: 14px;
+      font-weight: 600;
+
+      padding: 8px 16px;
     }
 
-    /* PAGE */
+    /* =========================
+       MAIN PAGE
+    ========================= */
+
     .page {
       min-height: 100vh;
 
@@ -43,49 +55,74 @@
       flex-direction: column;
       align-items: center;
 
-      padding: 65px 16px 30px;
+      padding: 64px 16px 30px;
 
-      background: #fff;
+      background: #ffffff;
+
+      animation: fadeInUp 0.6s ease both;
     }
 
-    /* TARGET LOGO */
-    .image-wrapper {
-      margin-bottom: 12px;
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
 
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* =========================
+       TARGET LOGO
+    ========================= */
+
+    .image-wrapper {
       width: 100%;
       max-width: 512px;
 
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
+
+      margin-bottom: 12px;
     }
 
     .hero-image {
       width: 115px;
       max-width: 30%;
+
       height: auto;
 
       display: block;
+
       object-fit: contain;
     }
 
-    /* HEADLINE */
+    /* =========================
+       HEADLINE
+    ========================= */
+
     h1 {
+      max-width: 512px;
+
       font-size: 26px;
       font-weight: 700;
 
       text-align: center;
 
-      margin-bottom: 18px;
-
-      color: #000;
-
-      max-width: 512px;
-
       line-height: 1.25;
+
+      color: #000000;
+
+      margin-bottom: 18px;
     }
 
-    /* STEPS */
+    /* =========================
+       STEPS
+    ========================= */
+
     .steps-card {
       width: 100%;
       max-width: 512px;
@@ -97,18 +134,20 @@
 
       margin-bottom: 24px;
 
-      background: #fff;
+      background: #ffffff;
     }
 
     .steps {
       display: flex;
       flex-direction: column;
+
       gap: 24px;
     }
 
     .step {
       display: flex;
       align-items: center;
+
       gap: 16px;
     }
 
@@ -122,37 +161,40 @@
       align-items: center;
       justify-content: center;
 
-      font-weight: 700;
-
       flex-shrink: 0;
 
       background: #cc0000;
-      color: #fff;
+
+      color: #ffffff;
+
+      font-weight: 700;
     }
 
     .step h3 {
+      color: #000000;
+
       font-size: 16px;
       font-weight: 600;
-      color: #000;
     }
 
-    /* CTA */
+    /* =========================
+       CTA
+    ========================= */
+
     .claim-button {
       width: 100%;
       max-width: 448px;
 
-      font-weight: 600;
-
       padding: 20px 24px;
 
-      border-radius: 999px;
-
-      margin-bottom: 14px;
-
-      background: #cc0000;
-      color: #fff;
+      margin-bottom: 12px;
 
       border: none;
+      border-radius: 999px;
+
+      background: #cc0000;
+
+      color: #ffffff;
 
       cursor: pointer;
 
@@ -160,7 +202,8 @@
       align-items: center;
       justify-content: center;
 
-      box-shadow: 0 10px 20px rgba(204, 0, 0, 0.20);
+      box-shadow:
+        0 10px 20px rgba(204, 0, 0, 0.20);
 
       transition:
         transform 0.2s ease,
@@ -177,124 +220,114 @@
     }
 
     .claim-button-text {
-      font-weight: 700;
       font-size: 18px;
+      font-weight: 700;
     }
 
-    /* TESTIMONIAL / RECENT ACTIVITY */
-    .activity-wrapper {
+    /* =========================
+       TESTIMONIAL BAR
+       SAME STYLE AS PROVIDED
+    ========================= */
+
+    .testimonial-wrapper {
       width: 100%;
-      max-width: 448px;
+      max-width: 512px;
 
-      min-height: 70px;
-
-      margin-bottom: 10px;
+      margin-bottom: 2px;
     }
 
-    .activity-card {
+    .testimonial-card {
       width: 100%;
 
-      background: #fff;
+      border-radius: 16px;
 
       border: 1px solid #e5e7eb;
-      border-radius: 14px;
 
-      padding: 13px 15px;
+      background: #ffffff;
 
-      display: flex;
-      align-items: center;
+      padding: 12px 16px;
 
-      gap: 11px;
-
-      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+      box-shadow:
+        0 10px 15px rgba(0, 0, 0, 0.08);
 
       opacity: 0;
       transform: translateY(8px);
 
       transition:
-        opacity 0.35s ease,
-        transform 0.35s ease;
+        opacity 0.3s ease,
+        transform 0.3s ease;
     }
 
-    .activity-card.visible {
+    .testimonial-card.visible {
       opacity: 1;
       transform: translateY(0);
     }
 
-    .activity-icon {
-      width: 36px;
-      height: 36px;
-
-      border-radius: 50%;
-
-      background: #f3f4f6;
-
+    .testimonial-inner {
       display: flex;
       align-items: center;
       justify-content: center;
 
+      gap: 8px;
+
+      text-align: center;
+    }
+
+    .testimonial-dot {
+      width: 10px;
+      height: 10px;
+
+      border-radius: 50%;
+
+      background: #000000;
+
       flex-shrink: 0;
-
-      color: #cc0000;
-
-      font-size: 18px;
-      font-weight: 700;
     }
 
-    .activity-content {
-      flex: 1;
+    .testimonial-text {
+      color: #000000;
+
+      font-size: 14px;
+      font-weight: 600;
+
+      line-height: 1.4;
+
+      text-align: center;
     }
 
-    .activity-label {
-      font-size: 11px;
-      color: #8a8a8a;
-
-      margin-bottom: 3px;
+    .testimonial-amount {
+      color: #22c55e;
 
       font-weight: 600;
     }
 
-    .activity-text {
-      color: #333;
+    /* =========================
+       FAQ
+    ========================= */
 
-      font-size: 13px;
-
-      line-height: 1.4;
-    }
-
-    .activity-name {
-      font-weight: 700;
-      color: #111;
-    }
-
-    .activity-amount {
-      color: #16a34a;
-      font-weight: 700;
-    }
-
-    /* FAQ */
     .faq-section {
-      margin-top: 30px;
+      width: 100%;
+      max-width: 512px;
+
+      margin-top: 40px;
 
       border-radius: 24px;
 
-      background: #fff;
+      background: #ffffff;
 
       border: 1px solid #e5e7eb;
 
       padding: 20px;
 
-      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
-
-      width: 100%;
-      max-width: 512px;
+      box-shadow:
+        0 1px 4px rgba(0, 0, 0, 0.06);
     }
 
     .faq-section h2 {
       font-size: 24px;
       font-weight: 700;
 
-      color: #000;
+      color: #000000;
 
       text-align: center;
     }
@@ -333,20 +366,21 @@
 
       cursor: pointer;
 
-      color: #fff;
+      color: #ffffff;
 
       font-weight: 600;
       font-size: 16px;
     }
 
     .faq-icon {
-      color: rgba(255, 255, 255, 0.8);
+      color: rgba(255, 255, 255, 0.7);
 
       margin-left: 12px;
 
       flex-shrink: 0;
 
-      transition: transform 0.2s ease;
+      transition:
+        transform 0.2s ease;
 
       font-size: 20px;
 
@@ -364,7 +398,7 @@
 
       font-size: 14px;
 
-      color: rgba(255, 255, 255, 0.90);
+      color: rgba(255, 255, 255, 0.9);
 
       line-height: 1.55;
     }
@@ -373,7 +407,12 @@
       display: block;
     }
 
+    /* =========================
+       DESKTOP
+    ========================= */
+
     @media (min-width: 768px) {
+
       h1 {
         font-size: 30px;
       }
@@ -386,6 +425,10 @@
         font-size: 20px;
       }
 
+      .testimonial-text {
+        font-size: 16px;
+      }
+
       .faq-section {
         padding: 28px;
       }
@@ -393,34 +436,55 @@
       .faq-section h2 {
         font-size: 30px;
       }
+
     }
   </style>
 </head>
 
 <body>
 
+  <!-- =========================
+       TOP BAR
+  ========================== -->
+
   <div class="top-bar">
     14,500+ People Already Claimed
   </div>
 
+
+  <!-- =========================
+       MAIN PAGE
+  ========================== -->
+
   <main class="page">
 
+
     <!-- TARGET LOGO -->
+
     <div class="image-wrapper">
+
       <img
         src="target logo.png"
         alt="Target"
         class="hero-image"
       />
+
     </div>
 
+
     <!-- HEADLINE -->
-    <h1>$750 Target Coupon</h1>
+
+    <h1>
+      $750 Target Coupon
+    </h1>
+
 
     <!-- STEPS -->
+
     <section class="steps-card">
 
       <div class="steps">
+
 
         <div class="step">
 
@@ -434,6 +498,7 @@
 
         </div>
 
+
         <div class="step">
 
           <div class="step-number">
@@ -445,6 +510,7 @@
           </h3>
 
         </div>
+
 
         <div class="step">
 
@@ -458,11 +524,14 @@
 
         </div>
 
+
       </div>
 
     </section>
 
+
     <!-- CTA -->
+
     <button
       class="claim-button"
       id="claimButton"
@@ -474,28 +543,26 @@
 
     </button>
 
-    <!-- RECENT ACTIVITY -->
-    <div class="activity-wrapper">
+
+    <!-- =========================
+         TESTIMONIAL BAR
+    ========================== -->
+
+    <div class="testimonial-wrapper">
 
       <div
-        class="activity-card"
-        id="activityCard"
+        class="testimonial-card"
+        id="testimonialCard"
       >
 
-        <div class="activity-icon">
-          ✓
-        </div>
+        <div class="testimonial-inner">
 
-        <div class="activity-content">
+          <span class="testimonial-dot"></span>
 
-          <div class="activity-label">
-            Recent activity
-          </div>
-
-          <div
-            class="activity-text"
-            id="activityText"
-          ></div>
+          <p
+            class="testimonial-text"
+            id="testimonialText"
+          ></p>
 
         </div>
 
@@ -503,7 +570,11 @@
 
     </div>
 
-    <!-- FAQ -->
+
+    <!-- =========================
+         FAQ
+    ========================== -->
+
     <section class="faq-section">
 
       <h2>
@@ -512,7 +583,9 @@
 
       <div class="faq-list">
 
-        <!-- FAQ 1 -->
+
+        <!-- QUESTION 1 -->
+
         <div class="faq-item">
 
           <button class="faq-question">
@@ -534,7 +607,9 @@
 
         </div>
 
-        <!-- FAQ 2 -->
+
+        <!-- QUESTION 2 -->
+
         <div class="faq-item">
 
           <button class="faq-question">
@@ -557,7 +632,9 @@
 
         </div>
 
-        <!-- FAQ 3 -->
+
+        <!-- QUESTION 3 -->
+
         <div class="faq-item">
 
           <button class="faq-question">
@@ -574,13 +651,15 @@
 
           <p class="faq-answer">
             We recommend completing 3-5 deals to qualify.
-            The more you complete, the higher your coupon value climbs
-            - up to $750.
+            The more you complete, the higher your coupon value
+            climbs - up to $750.
           </p>
 
         </div>
 
-        <!-- FAQ 4 -->
+
+        <!-- QUESTION 4 -->
+
         <div class="faq-item">
 
           <button class="faq-question">
@@ -597,30 +676,34 @@
 
           <p class="faq-answer">
             Once your deals are completed, your Target coupon code
-            will be delivered to your email.
+            will be delivered to your email instantly.
           </p>
 
         </div>
+
 
       </div>
 
     </section>
 
+
   </main>
+
 
   <script>
 
-    /*
-      AFFILIATE URL
-    */
+    /* =========================================
+       AFFILIATE URL
+    ========================================= */
 
     const baseUrl =
       "https://giftclick.org/aff_c?offer_id=1178&aff_id=150406";
 
 
-    /*
-      CTA REDIRECT + SOURCE FORWARDING
-    */
+    /* =========================================
+       CLAIM BUTTON
+       FORWARD SOURCE PARAMETER
+    ========================================= */
 
     document
       .getElementById("claimButton")
@@ -645,14 +728,173 @@
       });
 
 
-    /*
-      FAQ
-    */
+    /* =========================================
+       EXACT TESTIMONIALS PROVIDED
+    ========================================= */
+
+    const notifications = [
+
+      `
+        Olivia claimed
+        <span class="testimonial-amount">$750</span>
+        for completing 5 deals
+      `,
+
+      `
+        Charlotte received
+        <span class="testimonial-amount">$650</span>
+        for doing 4 deals
+      `,
+
+      `
+        Amelia received
+        <span class="testimonial-amount">$500</span>
+        for completing 4 deals
+      `,
+
+      `
+        Isla claimed
+        <span class="testimonial-amount">$650</span>
+        for doing 4 deals
+      `,
+
+      `
+        Ava claimed
+        <span class="testimonial-amount">$750</span>
+        for doing 5 deals
+      `,
+
+      `
+        Noah received
+        <span class="testimonial-amount">$750</span>
+        for completing 5 deals
+      `,
+
+      `
+        Grace claimed
+        <span class="testimonial-amount">$500</span>
+        for doing 3 deals
+      `,
+
+      `
+        Willow received
+        <span class="testimonial-amount">$650</span>
+        for completing 4 deals
+      `,
+
+      `
+        Harper claimed
+        <span class="testimonial-amount">$750</span>
+        for completing 5 deals
+      `,
+
+      `
+        Chloe claimed
+        <span class="testimonial-amount">$500</span>
+        for doing 3 deals
+      `
+
+    ];
+
+
+    let currentIndex = 0;
+
+    let visible = false;
+
+
+    const testimonialCard =
+      document.getElementById(
+        "testimonialCard"
+      );
+
+
+    const testimonialText =
+      document.getElementById(
+        "testimonialText"
+      );
+
+
+    /* =========================================
+       DISPLAY CURRENT TESTIMONIAL
+    ========================================= */
+
+    function updateNotification() {
+
+      testimonialText.innerHTML =
+        notifications[currentIndex];
+
+    }
+
+
+    /* Set first testimonial immediately,
+       but keep it hidden until 1.5 seconds */
+
+    updateNotification();
+
+
+    /* =========================================
+       SHOW AFTER 1.5 SECONDS
+       SAME AS PROVIDED REACT CODE
+    ========================================= */
+
+    const showTimer =
+      setTimeout(function () {
+
+        visible = true;
+
+        testimonialCard.classList.add(
+          "visible"
+        );
+
+      }, 1500);
+
+
+    /* =========================================
+       CYCLE EVERY 9 SECONDS
+       HIDE -> WAIT 350ms -> CHANGE -> SHOW
+       SAME AS PROVIDED CODE
+    ========================================= */
+
+    const cycleTimer =
+      setInterval(function () {
+
+        visible = false;
+
+        testimonialCard.classList.remove(
+          "visible"
+        );
+
+
+        setTimeout(function () {
+
+          currentIndex =
+            (currentIndex + 1)
+            % notifications.length;
+
+
+          updateNotification();
+
+
+          visible = true;
+
+          testimonialCard.classList.add(
+            "visible"
+          );
+
+        }, 350);
+
+      }, 9000);
+
+
+    /* =========================================
+       FAQ
+    ========================================= */
 
     const faqItems =
       document.querySelectorAll(
         ".faq-item"
       );
+
 
     faqItems.forEach(function (item) {
 
@@ -660,6 +902,7 @@
         item.querySelector(
           ".faq-question"
         );
+
 
       button.addEventListener(
         "click",
@@ -673,153 +916,6 @@
       );
 
     });
-
-
-    /*
-      RECENT ACTIVITY
-    */
-
-    const notifications = [
-
-      `
-        <span class="activity-name">Olivia</span>
-        claimed
-        <span class="activity-amount">$750</span>
-        for completing 5 deals
-      `,
-
-      `
-        <span class="activity-name">Charlotte</span>
-        received
-        <span class="activity-amount">$650</span>
-        for doing 4 deals
-      `,
-
-      `
-        <span class="activity-name">Amelia</span>
-        received
-        <span class="activity-amount">$500</span>
-        for completing 4 deals
-      `,
-
-      `
-        <span class="activity-name">Isla</span>
-        claimed
-        <span class="activity-amount">$650</span>
-        for doing 4 deals
-      `,
-
-      `
-        <span class="activity-name">Ava</span>
-        claimed
-        <span class="activity-amount">$750</span>
-        for doing 5 deals
-      `,
-
-      `
-        <span class="activity-name">Noah</span>
-        received
-        <span class="activity-amount">$750</span>
-        for completing 5 deals
-      `,
-
-      `
-        <span class="activity-name">Grace</span>
-        claimed
-        <span class="activity-amount">$500</span>
-        for doing 3 deals
-      `,
-
-      `
-        <span class="activity-name">Willow</span>
-        received
-        <span class="activity-amount">$650</span>
-        for completing 4 deals
-      `,
-
-      `
-        <span class="activity-name">Harper</span>
-        claimed
-        <span class="activity-amount">$750</span>
-        for completing 5 deals
-      `,
-
-      `
-        <span class="activity-name">Chloe</span>
-        claimed
-        <span class="activity-amount">$500</span>
-        for doing 3 deals
-      `
-
-    ];
-
-
-    let currentIndex = 0;
-
-
-    const activityCard =
-      document.getElementById(
-        "activityCard"
-      );
-
-
-    const activityText =
-      document.getElementById(
-        "activityText"
-      );
-
-
-    function showNotification() {
-
-      activityText.innerHTML =
-        notifications[currentIndex];
-
-      activityCard.classList.add(
-        "visible"
-      );
-
-    }
-
-
-    function cycleNotification() {
-
-      activityCard.classList.remove(
-        "visible"
-      );
-
-      setTimeout(function () {
-
-        currentIndex =
-          (currentIndex + 1)
-          % notifications.length;
-
-        showNotification();
-
-      }, 350);
-
-    }
-
-
-    /*
-      SHOW FIRST ONE AFTER 1.5 SECONDS
-    */
-
-    setTimeout(function () {
-
-      showNotification();
-
-
-      /*
-        CHANGE EVERY 9 SECONDS
-      */
-
-      setInterval(function () {
-
-        cycleNotification();
-
-      }, 9000);
-
-    }, 1500);
 
   </script>
 
