@@ -18,62 +18,85 @@
       color: #000;
     }
 
+    /* TOP BAR */
     .top-bar {
       width: 100%;
       color: #fff;
       text-align: center;
       font-size: 14px;
-      font-weight: 600;
-      padding: 8px 16px;
+      font-weight: 700;
+      padding: 9px 16px;
+
       position: fixed;
       top: 0;
       left: 0;
       z-index: 40;
-      background: #000;
+
+      background: #cc0000;
     }
 
+    /* PAGE */
     .page {
       min-height: 100vh;
+
       display: flex;
       flex-direction: column;
       align-items: center;
+
       padding: 65px 16px 30px;
+
       background: #fff;
     }
 
+    /* TARGET LOGO */
     .image-wrapper {
-      margin-bottom: 14px;
+      margin-bottom: 12px;
+
       width: 100%;
       max-width: 512px;
+
       display: flex;
       justify-content: center;
+      align-items: center;
     }
 
     .hero-image {
-      width: 180px;
-      max-width: 45%;
+      width: 115px;
+      max-width: 30%;
       height: auto;
+
       display: block;
       object-fit: contain;
     }
 
+    /* HEADLINE */
     h1 {
       font-size: 26px;
       font-weight: 700;
+
       text-align: center;
+
       margin-bottom: 18px;
+
       color: #000;
+
       max-width: 512px;
+
       line-height: 1.25;
     }
 
+    /* STEPS */
     .steps-card {
       width: 100%;
       max-width: 512px;
+
       border: 1px solid #e5e7eb;
       border-radius: 16px;
+
       padding: 24px;
+
       margin-bottom: 24px;
+
       background: #fff;
     }
 
@@ -92,12 +115,17 @@
     .step-number {
       width: 40px;
       height: 40px;
+
       border-radius: 999px;
+
       display: flex;
       align-items: center;
       justify-content: center;
+
       font-weight: 700;
+
       flex-shrink: 0;
+
       background: #cc0000;
       color: #fff;
     }
@@ -108,22 +136,35 @@
       color: #000;
     }
 
+    /* CTA */
     .claim-button {
       width: 100%;
       max-width: 448px;
+
       font-weight: 600;
+
       padding: 20px 24px;
+
       border-radius: 999px;
+
       margin-bottom: 14px;
+
       background: #cc0000;
       color: #fff;
+
       border: none;
+
       cursor: pointer;
+
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 10px 20px rgba(204, 0, 0, 0.2);
-      transition: transform 0.2s ease, opacity 0.2s ease;
+
+      box-shadow: 0 10px 20px rgba(204, 0, 0, 0.20);
+
+      transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
     }
 
     .claim-button:hover {
@@ -131,33 +172,45 @@
       opacity: 0.95;
     }
 
+    .claim-button:active {
+      transform: scale(0.99);
+    }
+
     .claim-button-text {
       font-weight: 700;
       font-size: 18px;
     }
 
-    /* rotating activity notification */
-
+    /* TESTIMONIAL / RECENT ACTIVITY */
     .activity-wrapper {
       width: 100%;
       max-width: 448px;
-      min-height: 66px;
-      margin-bottom: 12px;
+
+      min-height: 70px;
+
+      margin-bottom: 10px;
     }
 
     .activity-card {
       width: 100%;
+
       background: #fff;
+
       border: 1px solid #e5e7eb;
       border-radius: 14px;
-      padding: 13px 16px;
+
+      padding: 13px 15px;
+
       display: flex;
       align-items: center;
+
       gap: 11px;
+
       box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
 
       opacity: 0;
       transform: translateY(8px);
+
       transition:
         opacity 0.35s ease,
         transform 0.35s ease;
@@ -171,13 +224,21 @@
     .activity-icon {
       width: 36px;
       height: 36px;
+
       border-radius: 50%;
+
       background: #f3f4f6;
+
       display: flex;
       align-items: center;
       justify-content: center;
+
       flex-shrink: 0;
-      font-size: 17px;
+
+      color: #cc0000;
+
+      font-size: 18px;
+      font-weight: 700;
     }
 
     .activity-content {
@@ -187,14 +248,23 @@
     .activity-label {
       font-size: 11px;
       color: #8a8a8a;
+
       margin-bottom: 3px;
+
       font-weight: 600;
     }
 
     .activity-text {
       color: #333;
+
       font-size: 13px;
-      line-height: 1.35;
+
+      line-height: 1.4;
+    }
+
+    .activity-name {
+      font-weight: 700;
+      color: #111;
     }
 
     .activity-amount {
@@ -202,13 +272,20 @@
       font-weight: 700;
     }
 
+    /* FAQ */
     .faq-section {
       margin-top: 30px;
+
       border-radius: 24px;
+
       background: #fff;
+
       border: 1px solid #e5e7eb;
+
       padding: 20px;
+
       box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+
       width: 100%;
       max-width: 512px;
     }
@@ -216,44 +293,63 @@
     .faq-section h2 {
       font-size: 24px;
       font-weight: 700;
+
       color: #000;
+
       text-align: center;
     }
 
     .faq-list {
       margin-top: 20px;
+
       display: flex;
       flex-direction: column;
+
       gap: 12px;
     }
 
     .faq-item {
       border-radius: 12px;
+
       border: 1px solid #cc0000;
+
       padding: 12px 16px;
+
       background: #cc0000;
     }
 
     .faq-question {
       width: 100%;
+
       display: flex;
       align-items: center;
       justify-content: space-between;
+
       text-align: left;
+
       background: none;
+
       border: none;
+
       cursor: pointer;
+
       color: #fff;
+
       font-weight: 600;
       font-size: 16px;
     }
 
     .faq-icon {
       color: rgba(255, 255, 255, 0.8);
+
       margin-left: 12px;
+
       flex-shrink: 0;
+
       transition: transform 0.2s ease;
+
       font-size: 20px;
+
       line-height: 1;
     }
 
@@ -263,9 +359,13 @@
 
     .faq-answer {
       display: none;
+
       margin-top: 8px;
+
       font-size: 14px;
-      color: rgba(255, 255, 255, 0.9);
+
+      color: rgba(255, 255, 255, 0.90);
+
       line-height: 1.55;
     }
 
@@ -273,19 +373,13 @@
       display: block;
     }
 
-    .disclaimer {
-      width: 100%;
-      max-width: 512px;
-      margin-top: 18px;
-      font-size: 11px;
-      line-height: 1.45;
-      text-align: center;
-      color: #888;
-    }
-
     @media (min-width: 768px) {
       h1 {
         font-size: 30px;
+      }
+
+      .hero-image {
+        width: 125px;
       }
 
       .claim-button-text {
@@ -299,10 +393,6 @@
       .faq-section h2 {
         font-size: 30px;
       }
-
-      .hero-image {
-        width: 200px;
-      }
     }
   </style>
 </head>
@@ -315,6 +405,7 @@
 
   <main class="page">
 
+    <!-- TARGET LOGO -->
     <div class="image-wrapper">
       <img
         src="target logo.png"
@@ -323,41 +414,73 @@
       />
     </div>
 
+    <!-- HEADLINE -->
     <h1>$750 Target Coupon</h1>
 
+    <!-- STEPS -->
     <section class="steps-card">
 
       <div class="steps">
 
         <div class="step">
-          <div class="step-number">1</div>
-          <h3>Enter your email and basic info</h3>
+
+          <div class="step-number">
+            1
+          </div>
+
+          <h3>
+            Enter your email and basic info
+          </h3>
+
         </div>
 
         <div class="step">
-          <div class="step-number">2</div>
-          <h3>Complete 3-5 sponsored deals</h3>
+
+          <div class="step-number">
+            2
+          </div>
+
+          <h3>
+            Complete 3-5 sponsored deals
+          </h3>
+
         </div>
 
         <div class="step">
-          <div class="step-number">3</div>
-          <h3>Receive your $750 Target Coupon!</h3>
+
+          <div class="step-number">
+            3
+          </div>
+
+          <h3>
+            Receive your $750 Target Coupon!
+          </h3>
+
         </div>
 
       </div>
 
     </section>
 
-    <button class="claim-button" id="claimButton">
+    <!-- CTA -->
+    <button
+      class="claim-button"
+      id="claimButton"
+    >
+
       <div class="claim-button-text">
         Claim My $750 →
       </div>
+
     </button>
 
-    <!-- ROTATING OUTCOME EXAMPLE -->
-
+    <!-- RECENT ACTIVITY -->
     <div class="activity-wrapper">
-      <div class="activity-card" id="activityCard">
+
+      <div
+        class="activity-card"
+        id="activityCard"
+      >
 
         <div class="activity-icon">
           ✓
@@ -366,27 +489,42 @@
         <div class="activity-content">
 
           <div class="activity-label">
-            Example outcome
+            Recent activity
           </div>
 
-          <div class="activity-text" id="activityText"></div>
+          <div
+            class="activity-text"
+            id="activityText"
+          ></div>
 
         </div>
 
       </div>
+
     </div>
 
+    <!-- FAQ -->
     <section class="faq-section">
 
-      <h2>Common Questions</h2>
+      <h2>
+        Common Questions
+      </h2>
 
       <div class="faq-list">
 
+        <!-- FAQ 1 -->
         <div class="faq-item">
 
           <button class="faq-question">
-            <span>How long do the deals take?</span>
-            <span class="faq-icon">+</span>
+
+            <span>
+              How long do the deals take?
+            </span>
+
+            <span class="faq-icon">
+              +
+            </span>
+
           </button>
 
           <p class="faq-answer">
@@ -396,44 +534,70 @@
 
         </div>
 
+        <!-- FAQ 2 -->
         <div class="faq-item">
 
           <button class="faq-question">
-            <span>What are deals?</span>
-            <span class="faq-icon">+</span>
+
+            <span>
+              What are deals?
+            </span>
+
+            <span class="faq-icon">
+              +
+            </span>
+
           </button>
 
           <p class="faq-answer">
-            Deals are sponsored offers from partner brands like downloading
-            apps, trials, sign-ups, or surveys. They are how the coupon is funded.
+            Deals are sponsored offers from partner brands like
+            downloading apps, trials, sign-ups, or surveys.
+            They are how the coupon is funded.
           </p>
 
         </div>
 
+        <!-- FAQ 3 -->
         <div class="faq-item">
 
           <button class="faq-question">
-            <span>How many deals do I have to do?</span>
-            <span class="faq-icon">+</span>
+
+            <span>
+              How many deals do I have to do?
+            </span>
+
+            <span class="faq-icon">
+              +
+            </span>
+
           </button>
 
           <p class="faq-answer">
-            The number of deals required depends on the offer terms shown
-            after you register. Reward value can vary based on the offers completed.
+            We recommend completing 3-5 deals to qualify.
+            The more you complete, the higher your coupon value climbs
+            - up to $750.
           </p>
 
         </div>
 
+        <!-- FAQ 4 -->
         <div class="faq-item">
 
           <button class="faq-question">
-            <span>When will I receive my Target Coupon?</span>
-            <span class="faq-icon">+</span>
+
+            <span>
+              When will I receive my Target Coupon?
+            </span>
+
+            <span class="faq-icon">
+              +
+            </span>
+
           </button>
 
           <p class="faq-answer">
-            Reward delivery depends on successful completion and verification
-            of the required sponsored offers.
+            Once your deals are completed, your Target coupon code
+            will be delivered to your email.
           </p>
 
         </div>
@@ -442,28 +606,30 @@
 
     </section>
 
-    <p class="disclaimer">
-      Reward eligibility, value and fulfillment depend on successful completion
-      of the applicable sponsored offer requirements and terms.
-    </p>
-
   </main>
 
   <script>
 
     /*
-      AFFILIATE REDIRECT
+      AFFILIATE URL
     */
 
     const baseUrl =
       "https://giftclick.org/aff_c?offer_id=1178&aff_id=150406";
+
+
+    /*
+      CTA REDIRECT + SOURCE FORWARDING
+    */
 
     document
       .getElementById("claimButton")
       .addEventListener("click", function () {
 
         const params =
-          new URLSearchParams(window.location.search);
+          new URLSearchParams(
+            window.location.search
+          );
 
         const sourceValue =
           params.get("source");
@@ -473,7 +639,9 @@
             ? `${baseUrl}&source=${encodeURIComponent(sourceValue)}`
             : baseUrl;
 
-        window.location.href = finalUrl;
+        window.location.href =
+          finalUrl;
+
       });
 
 
@@ -482,80 +650,123 @@
     */
 
     const faqItems =
-      document.querySelectorAll(".faq-item");
+      document.querySelectorAll(
+        ".faq-item"
+      );
 
     faqItems.forEach(function (item) {
 
       const button =
-        item.querySelector(".faq-question");
+        item.querySelector(
+          ".faq-question"
+        );
 
-      button.addEventListener("click", function () {
-        item.classList.toggle("open");
-      });
+      button.addEventListener(
+        "click",
+        function () {
+
+          item.classList.toggle(
+            "open"
+          );
+
+        }
+      );
 
     });
 
 
     /*
-      ROTATING EXAMPLE OUTCOMES
+      RECENT ACTIVITY
     */
 
     const notifications = [
-    <>
-      Olivia claimed{" "}
-      <span className="text-green-500 font-semibold">$750</span> for
-      completing 5 deals
-    </>,
-    <>
-      Charlotte received{" "}
-      <span className="text-green-500 font-semibold">$650</span> for doing 4
-      deals
-    </>,
-    <>
-      Amelia received{" "}
-      <span className="text-green-500 font-semibold">$500</span> for completing
-      4 deals
-    </>,
-    <>
-      Isla claimed <span className="text-green-500 font-semibold">$650</span>{" "}
-      for doing 4 deals
-    </>,
-    <>
-      Ava claimed <span className="text-green-500 font-semibold">$750</span>{" "}
-      for doing 5 deals
-    </>,
-    <>
-      Noah received{" "}
-      <span className="text-green-500 font-semibold">$750</span> for completing
-      5 deals
-    </>,
-    <>
-      Grace claimed <span className="text-green-500 font-semibold">$500</span>{" "}
-      for doing 3 deals
-    </>,
-    <>
-      Willow received{" "}
-      <span className="text-green-500 font-semibold">$650</span> for completing
-      4 deals
-    </>,
-    <>
-      Harper claimed{" "}
-      <span className="text-green-500 font-semibold">$750</span> for completing
-      5 deals
-    </>,
-    <>
-      Chloe claimed <span className="text-green-500 font-semibold">$500</span>{" "}
-      for doing 3 deals
-    </>,
-  ];
+
+      `
+        <span class="activity-name">Olivia</span>
+        claimed
+        <span class="activity-amount">$750</span>
+        for completing 5 deals
+      `,
+
+      `
+        <span class="activity-name">Charlotte</span>
+        received
+        <span class="activity-amount">$650</span>
+        for doing 4 deals
+      `,
+
+      `
+        <span class="activity-name">Amelia</span>
+        received
+        <span class="activity-amount">$500</span>
+        for completing 4 deals
+      `,
+
+      `
+        <span class="activity-name">Isla</span>
+        claimed
+        <span class="activity-amount">$650</span>
+        for doing 4 deals
+      `,
+
+      `
+        <span class="activity-name">Ava</span>
+        claimed
+        <span class="activity-amount">$750</span>
+        for doing 5 deals
+      `,
+
+      `
+        <span class="activity-name">Noah</span>
+        received
+        <span class="activity-amount">$750</span>
+        for completing 5 deals
+      `,
+
+      `
+        <span class="activity-name">Grace</span>
+        claimed
+        <span class="activity-amount">$500</span>
+        for doing 3 deals
+      `,
+
+      `
+        <span class="activity-name">Willow</span>
+        received
+        <span class="activity-amount">$650</span>
+        for completing 4 deals
+      `,
+
+      `
+        <span class="activity-name">Harper</span>
+        claimed
+        <span class="activity-amount">$750</span>
+        for completing 5 deals
+      `,
+
+      `
+        <span class="activity-name">Chloe</span>
+        claimed
+        <span class="activity-amount">$500</span>
+        for doing 3 deals
+      `
+
+    ];
+
 
     let currentIndex = 0;
 
+
     const activityCard =
-      document.getElementById("activityCard");
+      document.getElementById(
+        "activityCard"
+      );
+
 
     const activityText =
-      document.getElementById("activityText");
+      document.getElementById(
+        "activityText"
+      );
 
 
     function showNotification() {
@@ -563,19 +774,24 @@
       activityText.innerHTML =
         notifications[currentIndex];
 
-      activityCard.classList.add("visible");
+      activityCard.classList.add(
+        "visible"
+      );
 
     }
 
 
     function cycleNotification() {
 
-      activityCard.classList.remove("visible");
+      activityCard.classList.remove(
+        "visible"
+      );
 
       setTimeout(function () {
 
         currentIndex =
-          (currentIndex + 1) % notifications.length;
+          (currentIndex + 1)
+          % notifications.length;
 
         showNotification();
 
@@ -584,12 +800,23 @@
     }
 
 
+    /*
+      SHOW FIRST ONE AFTER 1.5 SECONDS
+    */
+
     setTimeout(function () {
 
       showNotification();
 
+
+      /*
+        CHANGE EVERY 9 SECONDS
+      */
+
       setInterval(function () {
+
         cycleNotification();
+
       }, 9000);
 
     }, 1500);
