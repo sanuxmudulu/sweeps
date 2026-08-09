@@ -1,218 +1,560 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#ffffff">
-<title>$750 Target Coupon</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>$750 Target Coupon</title>
 
-<style>
-:root{--red:#cc0000;--red-dark:#b00000;--black:#191919;--text:#333;--green:#22a447;--border:#e6e6e6}
-*{margin:0;padding:0;box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{min-height:100vh;font-family:"DM Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#f4f4f4;color:var(--text);-webkit-font-smoothing:antialiased}
-a{text-decoration:none;-webkit-tap-highlight-color:transparent}
-.page{width:100%;max-width:430px;min-height:100vh;margin:0 auto;background:#fff;padding:max(32px,env(safe-area-inset-top)) 20px calc(35px + env(safe-area-inset-bottom));box-shadow:0 0 40px rgba(0,0,0,.055)}
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-/* NOTIFICATION */
-.notification{position:fixed;top:max(6px,env(safe-area-inset-top));left:50%;transform:translateX(-50%) translateY(-12px) scale(.98);z-index:9999;width:calc(100% - 24px);max-width:406px;min-height:66px;display:flex;align-items:center;gap:11px;padding:11px 13px;border:1px solid rgba(0,0,0,.09);border-radius:13px;background:rgba(255,255,255,.98);box-shadow:0 10px 30px rgba(0,0,0,.16);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);opacity:0;visibility:hidden;transition:opacity .25s ease,transform .25s ease,visibility .25s ease}
-.notification.show{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0) scale(1)}
-.notification-logo{width:37px;height:37px;flex:0 0 37px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:#fff}
-.notification-logo img{width:34px;height:34px;object-fit:contain}
-.notification-content{min-width:0;flex:1}
-.notification-title{font-size:13px;line-height:1.15;font-weight:700;color:#333;margin-bottom:4px}
-.notification-message{font-size:12.5px;line-height:1.35;font-weight:500;color:#666}
-.notification-message .money{color:var(--green);font-weight:700}
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #fff;
+      color: #000;
+    }
 
-/* HERO */
-.hero{text-align:center;padding-top:15px}
-.logo-shell{width:76px;height:76px;margin:0 auto 17px;display:flex;align-items:center;justify-content:center;border-radius:22px;background:#fff;box-shadow:0 9px 27px rgba(0,0,0,.08)}
-.logo-shell img{width:65px;height:65px;object-fit:contain}
-.headline{font-size:28px;line-height:1.08;letter-spacing:-.045em;font-weight:800;color:#191919}
-.headline .target{color:var(--red)}
-.hero-subtitle{max-width:320px;margin:12px auto 0;color:#707070;font-size:14px;line-height:1.5;font-weight:400}
+    .top-bar {
+      width: 100%;
+      color: #fff;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 8px 16px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 40;
+      background: #000;
+    }
 
-/* STEPS */
-.steps{margin-top:34px;padding:0 5px}
-.step{display:grid;grid-template-columns:36px 1fr;min-height:57px}
-.step:last-child{min-height:38px}
-.step-rail{position:relative;display:flex;justify-content:center}
-.step-rail:after{content:"";position:absolute;top:29px;bottom:-2px;width:1px;background:#e6e6e6}
-.step:last-child .step-rail:after{display:none}
-.step-number{position:relative;z-index:2;width:27px;height:27px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:#1d1d1f;color:#fff;font-size:12px;font-weight:700;box-shadow:0 2px 6px rgba(0,0,0,.16)}
-.step-copy{padding:3px 0 15px 11px}
-.step-text{font-size:15px;line-height:1.35;font-weight:500;color:#2e2e2e;letter-spacing:-.01em}
-.important{display:block;margin-top:2px;font-size:12px;line-height:1.1;font-weight:700;font-style:italic;color:#333}
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 65px 16px 30px;
+      background: #fff;
+    }
 
-/* CTA */
-.cta-area{margin-top:22px}
-.cta{width:100%;height:57px;display:flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;background:var(--red);color:#fff;font-size:16px;font-weight:700;letter-spacing:-.015em;box-shadow:0 12px 25px rgba(204,0,0,.22);transition:background .15s ease,transform .15s ease}
-.cta:hover{background:var(--red-dark)}
-.cta:active{transform:scale(.985)}
-.cta-arrow{font-size:19px;transition:transform .15s ease}
-.cta:hover .cta-arrow{transform:translateX(2px)}
+    .image-wrapper {
+      margin-bottom: 14px;
+      width: 100%;
+      max-width: 512px;
+      display: flex;
+      justify-content: center;
+    }
 
-/* METRICS */
-.metrics{margin-top:14px;width:100%;min-height:80px;display:grid;grid-template-columns:repeat(3,1fr);border:1px solid #e1e1e1;border-radius:18px;background:#fafafa;overflow:hidden}
-.metric{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:10px 4px}
-.metric:not(:last-child):after{content:"";position:absolute;right:0;width:1px;height:40px;background:#ddd}
-.metric-label{margin-bottom:7px;font-size:9px;line-height:1.25;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#777}
-.metric-value{font-size:19px;line-height:1;font-weight:800;letter-spacing:-.03em;color:#171717}
-.metric-value.time{font-size:16px}
+    .hero-image {
+      width: 180px;
+      max-width: 45%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+    }
 
-/* SUCCESS STORIES */
-.stories{margin-top:23px}
-.stories-title{text-align:center;margin-bottom:12px;font-size:14px;line-height:1.2;font-weight:700;color:#3b3b3b}
-.story-card{width:100%;padding:14px 14px 13px;margin-bottom:10px;border:1px solid var(--border);border-radius:14px;background:#fff;box-shadow:0 2px 7px rgba(0,0,0,.035)}
-.story-header{display:flex;align-items:center;gap:9px;margin-bottom:9px}
-.avatar{width:32px;height:32px;flex:0 0 32px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:linear-gradient(145deg,#eee,#f8f8f8);color:#333;font-size:12px;font-weight:700}
-.story-user{min-width:0}
-.story-username{font-size:12px;line-height:1.15;font-weight:700;color:#444}
-.story-time{margin-top:3px;font-size:10px;line-height:1.1;color:#999}
-.story-copy{font-size:13.5px;line-height:1.5;font-weight:400;color:#454545}
-.story-copy strong{font-weight:700;color:#222}
-.story-reactions{display:flex;align-items:center;gap:14px;margin-top:9px;font-size:12px;color:#999}
-.reaction-heart{color:var(--red)}
-.reaction-comment{color:#777}
+    h1 {
+      font-size: 26px;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 18px;
+      color: #000;
+      max-width: 512px;
+      line-height: 1.25;
+    }
 
-/* DISCLAIMER */
-.disclaimer{max-width:355px;margin:20px auto 0;text-align:center;font-size:9px;line-height:1.5;color:#aaa}
+    .steps-card {
+      width: 100%;
+      max-width: 512px;
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 24px;
+      background: #fff;
+    }
 
-@media(max-width:350px){
-.page{padding-left:15px;padding-right:15px}
-.headline{font-size:26px}
-.notification-message{font-size:11.5px}
-.story-copy{font-size:13px}
-}
-</style>
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .step {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .step-number {
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      flex-shrink: 0;
+      background: #cc0000;
+      color: #fff;
+    }
+
+    .step h3 {
+      font-size: 16px;
+      font-weight: 600;
+      color: #000;
+    }
+
+    .claim-button {
+      width: 100%;
+      max-width: 448px;
+      font-weight: 600;
+      padding: 20px 24px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+      background: #cc0000;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 20px rgba(204, 0, 0, 0.2);
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .claim-button:hover {
+      transform: scale(1.02);
+      opacity: 0.95;
+    }
+
+    .claim-button-text {
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    /* rotating activity notification */
+
+    .activity-wrapper {
+      width: 100%;
+      max-width: 448px;
+      min-height: 66px;
+      margin-bottom: 12px;
+    }
+
+    .activity-card {
+      width: 100%;
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 13px 16px;
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+
+      opacity: 0;
+      transform: translateY(8px);
+      transition:
+        opacity 0.35s ease,
+        transform 0.35s ease;
+    }
+
+    .activity-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .activity-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #f3f4f6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 17px;
+    }
+
+    .activity-content {
+      flex: 1;
+    }
+
+    .activity-label {
+      font-size: 11px;
+      color: #8a8a8a;
+      margin-bottom: 3px;
+      font-weight: 600;
+    }
+
+    .activity-text {
+      color: #333;
+      font-size: 13px;
+      line-height: 1.35;
+    }
+
+    .activity-amount {
+      color: #16a34a;
+      font-weight: 700;
+    }
+
+    .faq-section {
+      margin-top: 30px;
+      border-radius: 24px;
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      padding: 20px;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+      width: 100%;
+      max-width: 512px;
+    }
+
+    .faq-section h2 {
+      font-size: 24px;
+      font-weight: 700;
+      color: #000;
+      text-align: center;
+    }
+
+    .faq-list {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .faq-item {
+      border-radius: 12px;
+      border: 1px solid #cc0000;
+      padding: 12px 16px;
+      background: #cc0000;
+    }
+
+    .faq-question {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-align: left;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #fff;
+      font-weight: 600;
+      font-size: 16px;
+    }
+
+    .faq-icon {
+      color: rgba(255, 255, 255, 0.8);
+      margin-left: 12px;
+      flex-shrink: 0;
+      transition: transform 0.2s ease;
+      font-size: 20px;
+      line-height: 1;
+    }
+
+    .faq-item.open .faq-icon {
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      display: none;
+      margin-top: 8px;
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.9);
+      line-height: 1.55;
+    }
+
+    .faq-item.open .faq-answer {
+      display: block;
+    }
+
+    .disclaimer {
+      width: 100%;
+      max-width: 512px;
+      margin-top: 18px;
+      font-size: 11px;
+      line-height: 1.45;
+      text-align: center;
+      color: #888;
+    }
+
+    @media (min-width: 768px) {
+      h1 {
+        font-size: 30px;
+      }
+
+      .claim-button-text {
+        font-size: 20px;
+      }
+
+      .faq-section {
+        padding: 28px;
+      }
+
+      .faq-section h2 {
+        font-size: 30px;
+      }
+
+      .hero-image {
+        width: 200px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="notification" id="notification">
-  <div class="notification-logo"><img src="target logo.png" alt="Target"></div>
-  <div class="notification-content">
-    <div class="notification-title">Recent Claim</div>
-    <div class="notification-message" id="notificationMessage"></div>
+  <div class="top-bar">
+    14,500+ People Already Claimed
   </div>
-</div>
 
-<main class="page">
+  <main class="page">
 
-<section class="hero">
-  <div class="logo-shell"><img src="target logo.png" alt="Target"></div>
-  <h1 class="headline">$750 <span class="target">Target</span> Coupon</h1>
-  <p class="hero-subtitle">Follow the steps below to continue to the promotional offer.</p>
-</section>
-
-<section class="steps">
-  <div class="step">
-    <div class="step-rail"><div class="step-number">1</div></div>
-    <div class="step-copy"><div class="step-text">Click the button below</div></div>
-  </div>
-  <div class="step">
-    <div class="step-rail"><div class="step-number">2</div></div>
-    <div class="step-copy"><div class="step-text">Enter your email &amp; info</div></div>
-  </div>
-  <div class="step">
-    <div class="step-rail"><div class="step-number">3</div></div>
-    <div class="step-copy"><div class="step-text">Complete 3-5 deals</div><span class="important">(IMPORTANT)</span></div>
-  </div>
-  <div class="step">
-    <div class="step-rail"><div class="step-number">4</div></div>
-    <div class="step-copy"><div class="step-text">Claim reward &amp; repeat!</div></div>
-  </div>
-</section>
-
-<div class="cta-area">
-  <a class="cta affiliate-link" href="https://giftclick.org/aff_c?offer_id=1178&aff_id=150406">Claim Now <span class="cta-arrow">→</span></a>
-</div>
-
-<section class="metrics">
-  <div class="metric"><div class="metric-label">Active Users</div><div class="metric-value">1,296</div></div>
-  <div class="metric"><div class="metric-label">Claimed Today</div><div class="metric-value">5,868</div></div>
-  <div class="metric"><div class="metric-label">Avg Completion Time</div><div class="metric-value time">&lt;5 min</div></div>
-</section>
-
-<section class="stories">
-  <div class="stories-title">Recent Success Stories</div>
-
-  <article class="story-card">
-    <div class="story-header">
-      <div class="avatar">S</div>
-      <div class="story-user"><div class="story-username">@sarah_davis</div><div class="story-time">2h ago</div></div>
+    <div class="image-wrapper">
+      <img
+        src="target logo.png"
+        alt="Target"
+        class="hero-image"
+      />
     </div>
-    <div class="story-copy">Started yesterday and already earned <strong>$438!</strong> The process is so simple ✨</div>
-    <div class="story-reactions"><span class="reaction-heart">♥ 89</span><span class="reaction-comment">💬 23</span></div>
-  </article>
 
-  <article class="story-card">
-    <div class="story-header">
-      <div class="avatar">E</div>
-      <div class="story-user"><div class="story-username">@emma_smith</div><div class="story-time">5h ago</div></div>
+    <h1>$750 Target Coupon</h1>
+
+    <section class="steps-card">
+
+      <div class="steps">
+
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3>Enter your email and basic info</h3>
+        </div>
+
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3>Complete 3-5 sponsored deals</h3>
+        </div>
+
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3>Receive your $750 Target Coupon!</h3>
+        </div>
+
+      </div>
+
+    </section>
+
+    <button class="claim-button" id="claimButton">
+      <div class="claim-button-text">
+        Claim My $750 →
+      </div>
+    </button>
+
+    <!-- ROTATING OUTCOME EXAMPLE -->
+
+    <div class="activity-wrapper">
+      <div class="activity-card" id="activityCard">
+
+        <div class="activity-icon">
+          ✓
+        </div>
+
+        <div class="activity-content">
+
+          <div class="activity-label">
+            Example outcome
+          </div>
+
+          <div class="activity-text" id="activityText"></div>
+
+        </div>
+
+      </div>
     </div>
-    <div class="story-copy">Week 3 update: <strong>$1,273 total earned</strong> sent straight to my Apple Pay 🎉</div>
-    <div class="story-reactions"><span class="reaction-heart">♥ 156</span><span class="reaction-comment">💬 34</span></div>
-  </article>
 
-  <article class="story-card">
-    <div class="story-header">
-      <div class="avatar">M</div>
-      <div class="story-user"><div class="story-username">@miajohnson_22</div><div class="story-time">1d ago</div></div>
-    </div>
-    <div class="story-copy">Just completed my 4th deal today. <strong>Made 683$ this week</strong> and got paid to my bank account 😇 This actually works guys 🔥❤️</div>
-    <div class="story-reactions"><span class="reaction-heart">♥ 47</span><span class="reaction-comment">💬 12</span></div>
-  </article>
-</section>
+    <section class="faq-section">
 
-<div class="disclaimer">Target is a registered trademark of its respective owner. This website is not sponsored, endorsed by, or affiliated with Target. Eligibility, reward availability and promotional requirements are determined by the third-party offer provider.</div>
+      <h2>Common Questions</h2>
 
-</main>
+      <div class="faq-list">
 
-<script>
-const BASE_AFFILIATE_URL="https://giftclick.org/aff_c?offer_id=1178&aff_id=150406";
-const params=new URLSearchParams(window.location.search);
-const source=params.get("source");
-let finalAffiliateUrl=BASE_AFFILIATE_URL;
-if(source!==null&&source.trim()!==""){finalAffiliateUrl=BASE_AFFILIATE_URL+"&source="+encodeURIComponent(source)}
-document.querySelectorAll(".affiliate-link").forEach(function(link){link.href=finalAffiliateUrl});
+        <div class="faq-item">
 
-const notifications=[
-`Olivia claimed <span class="money">$750</span> for completing 5 deals`,
-`Charlotte received <span class="money">$650</span> for doing 4 deals`,
-`Amelia received <span class="money">$500</span> for completing 4 deals`,
-`Isla claimed <span class="money">$650</span> for doing 4 deals`,
-`Ava claimed <span class="money">$750</span> for doing 5 deals`,
-`Noah received <span class="money">$750</span> for completing 5 deals`,
-`Grace claimed <span class="money">$500</span> for doing 3 deals`,
-`Willow received <span class="money">$650</span> for completing 4 deals`,
-`Harper claimed <span class="money">$750</span> for completing 5 deals`,
-`Chloe claimed <span class="money">$500</span> for doing 3 deals`
-];
+          <button class="faq-question">
+            <span>How long do the deals take?</span>
+            <span class="faq-icon">+</span>
+          </button>
 
-const notification=document.getElementById("notification");
-const notificationMessage=document.getElementById("notificationMessage");
-let currentNotification=0;
+          <p class="faq-answer">
+            Most deals take just a few minutes to complete.
+            You can finish them at your own pace once you've registered.
+          </p>
 
-const FIRST_DELAY=2000;
-const VISIBLE_TIME=3000;
-const GAP_TIME=2000;
+        </div>
 
-function showNotification(){
-  notificationMessage.innerHTML=notifications[currentNotification];
-  currentNotification=(currentNotification+1)%notifications.length;
-  notification.classList.add("show");
-  setTimeout(function(){
-    notification.classList.remove("show");
-    setTimeout(showNotification,GAP_TIME);
-  },VISIBLE_TIME);
-}
+        <div class="faq-item">
 
-setTimeout(showNotification,FIRST_DELAY);
-</script>
+          <button class="faq-question">
+            <span>What are deals?</span>
+            <span class="faq-icon">+</span>
+          </button>
+
+          <p class="faq-answer">
+            Deals are sponsored offers from partner brands like downloading
+            apps, trials, sign-ups, or surveys. They are how the coupon is funded.
+          </p>
+
+        </div>
+
+        <div class="faq-item">
+
+          <button class="faq-question">
+            <span>How many deals do I have to do?</span>
+            <span class="faq-icon">+</span>
+          </button>
+
+          <p class="faq-answer">
+            The number of deals required depends on the offer terms shown
+            after you register. Reward value can vary based on the offers completed.
+          </p>
+
+        </div>
+
+        <div class="faq-item">
+
+          <button class="faq-question">
+            <span>When will I receive my Target Coupon?</span>
+            <span class="faq-icon">+</span>
+          </button>
+
+          <p class="faq-answer">
+            Reward delivery depends on successful completion and verification
+            of the required sponsored offers.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <p class="disclaimer">
+      Reward eligibility, value and fulfillment depend on successful completion
+      of the applicable sponsored offer requirements and terms.
+    </p>
+
+  </main>
+
+  <script>
+
+    /*
+      AFFILIATE REDIRECT
+    */
+
+    const baseUrl =
+      "https://giftclick.org/aff_c?offer_id=1178&aff_id=150406";
+
+    document
+      .getElementById("claimButton")
+      .addEventListener("click", function () {
+
+        const params =
+          new URLSearchParams(window.location.search);
+
+        const sourceValue =
+          params.get("source");
+
+        const finalUrl =
+          sourceValue
+            ? `${baseUrl}&source=${encodeURIComponent(sourceValue)}`
+            : baseUrl;
+
+        window.location.href = finalUrl;
+      });
+
+
+    /*
+      FAQ
+    */
+
+    const faqItems =
+      document.querySelectorAll(".faq-item");
+
+    faqItems.forEach(function (item) {
+
+      const button =
+        item.querySelector(".faq-question");
+
+      button.addEventListener("click", function () {
+        item.classList.toggle("open");
+      });
+
+    });
+
+
+    /*
+      ROTATING EXAMPLE OUTCOMES
+    */
+
+    const notifications = [
+      '5 deals completed — example reward value <span class="activity-amount">$750</span>',
+      '4 deals completed — example reward value <span class="activity-amount">$650</span>',
+      '4 deals completed — example reward value <span class="activity-amount">$500</span>',
+      '3 deals completed — example reward value <span class="activity-amount">$500</span>',
+      '5 deals completed — example reward value <span class="activity-amount">$750</span>',
+      '4 deals completed — example reward value <span class="activity-amount">$650</span>'
+    ];
+
+    let currentIndex = 0;
+
+    const activityCard =
+      document.getElementById("activityCard");
+
+    const activityText =
+      document.getElementById("activityText");
+
+
+    function showNotification() {
+
+      activityText.innerHTML =
+        notifications[currentIndex];
+
+      activityCard.classList.add("visible");
+
+    }
+
+
+    function cycleNotification() {
+
+      activityCard.classList.remove("visible");
+
+      setTimeout(function () {
+
+        currentIndex =
+          (currentIndex + 1) % notifications.length;
+
+        showNotification();
+
+      }, 350);
+
+    }
+
+
+    setTimeout(function () {
+
+      showNotification();
+
+      setInterval(function () {
+        cycleNotification();
+      }, 9000);
+
+    }, 1500);
+
+  </script>
 
 </body>
 </html>
