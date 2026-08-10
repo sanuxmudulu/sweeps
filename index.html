@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>$750 Target Coupon</title>
+  <title>$750 Apple Cash</title>
 
   <style>
     * {
@@ -15,50 +14,32 @@
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background: #ffffff;
-      color: #000000;
+      background: #fff;
+      color: #000;
     }
-
-    /* =========================
-       TOP BAR
-    ========================= */
 
     .top-bar {
       width: 100%;
-
+      color: #fff;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 8px 16px;
       position: fixed;
       top: 0;
       left: 0;
-
       z-index: 40;
-
-      background: #cc0000;
-
-      color: #ffffff;
-
-      text-align: center;
-
-      font-size: 14px;
-      font-weight: 600;
-
-      padding: 8px 16px;
+      background: #000;
     }
-
-    /* =========================
-       MAIN PAGE
-    ========================= */
 
     .page {
       min-height: 100vh;
-
       display: flex;
       flex-direction: column;
       align-items: center;
-
-      padding: 64px 16px 30px;
-
-      background: #ffffff;
-
+      justify-content: center;
+      padding: 48px 16px 16px;
+      background: #fff;
       animation: fadeInUp 0.6s ease both;
     }
 
@@ -67,323 +48,161 @@
         opacity: 0;
         transform: translateY(12px);
       }
-
       to {
         opacity: 1;
         transform: translateY(0);
       }
     }
 
-    /* =========================
-       TARGET LOGO
-    ========================= */
-
     .image-wrapper {
+      margin-bottom: 8px;
       width: 100%;
       max-width: 512px;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      margin-bottom: 12px;
     }
 
     .hero-image {
-      width: 75px;
-      max-width: 30%;
-
-      height: auto;
-
+      width: 100%;
+      border-radius: 16px;
       display: block;
-
-      object-fit: contain;
     }
-
-    /* =========================
-       HEADLINE
-    ========================= */
 
     h1 {
-      max-width: 512px;
-
-      font-size: 26px;
+      font-size: 24px;
       font-weight: 700;
-
       text-align: center;
-
+      margin-bottom: 12px;
+      color: #000;
+      max-width: 512px;
       line-height: 1.25;
-
-      color: #000000;
-
-      margin-bottom: 18px;
     }
-
-    /* =========================
-       STEPS
-    ========================= */
 
     .steps-card {
       width: 100%;
       max-width: 512px;
-
       border: 1px solid #e5e7eb;
       border-radius: 16px;
-
       padding: 24px;
-
       margin-bottom: 24px;
-
-      background: #ffffff;
+      background: #fff;
     }
 
     .steps {
       display: flex;
       flex-direction: column;
-
       gap: 24px;
     }
 
     .step {
       display: flex;
       align-items: center;
-
       gap: 16px;
     }
 
     .step-number {
       width: 40px;
       height: 40px;
-
       border-radius: 999px;
-
       display: flex;
       align-items: center;
       justify-content: center;
-
-      flex-shrink: 0;
-
-      background: #cc0000;
-
-      color: #ffffff;
-
       font-weight: 700;
+      flex-shrink: 0;
+      background: #000;
+      color: #fff;
     }
 
     .step h3 {
-      color: #000000;
-
       font-size: 16px;
       font-weight: 600;
+      color: #000;
     }
-
-    /* =========================
-       CTA
-    ========================= */
 
     .claim-button {
-      width: 100%;
-      max-width: 448px;
-
-      padding: 20px 24px;
-
-      margin-bottom: 12px;
-
-      border: none;
-      border-radius: 999px;
-
-      background: #cc0000;
-
-      color: #ffffff;
-
-      cursor: pointer;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      box-shadow:
-        0 10px 20px rgba(204, 0, 0, 0.20);
-
-      transition:
-        transform 0.2s ease,
-        opacity 0.2s ease;
-    }
+  width: 100%;
+  max-width: 448px;
+  font-weight: 600;
+  padding: 20px 24px;
+  border-radius: 999px;
+  margin-bottom: 12px;
+  background: #000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18);
+}
 
     .claim-button:hover {
       transform: scale(1.02);
-      opacity: 0.95;
-    }
-
-    .claim-button:active {
-      transform: scale(0.99);
     }
 
     .claim-button-text {
-      font-size: 18px;
+      text-align: left;
       font-weight: 700;
+      font-size: 18px;
     }
 
-    /* =========================
-       TESTIMONIAL BAR
-       SAME STYLE AS PROVIDED
-    ========================= */
+   
 
-    .testimonial-wrapper {
-      width: 100%;
-      max-width: 512px;
 
-      margin-bottom: 2px;
-    }
 
-    .testimonial-card {
-      width: 100%;
-
-      border-radius: 16px;
-
-      border: 1px solid #e5e7eb;
-
-      background: #ffffff;
-
-      padding: 12px 16px;
-
-      box-shadow:
-        0 10px 15px rgba(0, 0, 0, 0.08);
-
-      opacity: 0;
-      transform: translateY(8px);
-
-      transition:
-        opacity 0.3s ease,
-        transform 0.3s ease;
-    }
-
-    .testimonial-card.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .testimonial-inner {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      gap: 8px;
-
-      text-align: center;
-    }
-
-    .testimonial-dot {
-      width: 10px;
-      height: 10px;
-
-      border-radius: 50%;
-
-      background: #cc0000;
-
-      flex-shrink: 0;
-    }
-
-    .testimonial-text {
-      color: #000000;
-
-      font-size: 14px;
-      font-weight: 600;
-
-      line-height: 1.4;
-
-      text-align: center;
-    }
-
-    .testimonial-amount {
-      color: #cc0000;
-
-      font-weight: 600;
-    }
-
-    /* =========================
-       FAQ
-    ========================= */
+   
 
     .faq-section {
+      margin-top: 40px;
+      border-radius: 24px;
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      padding: 20px;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
       width: 100%;
       max-width: 512px;
-
-      margin-top: 40px;
-
-      border-radius: 24px;
-
-      background: #ffffff;
-
-      border: 1px solid #e5e7eb;
-
-      padding: 20px;
-
-      box-shadow:
-        0 1px 4px rgba(0, 0, 0, 0.06);
     }
 
     .faq-section h2 {
       font-size: 24px;
       font-weight: 700;
-
-      color: #000000;
-
+      color: #000;
       text-align: center;
     }
 
     .faq-list {
       margin-top: 20px;
-
       display: flex;
       flex-direction: column;
-
       gap: 12px;
     }
 
     .faq-item {
       border-radius: 12px;
-
-      border: 1px solid #cc0000;
-
+      border: 1px solid #d1d5db;
       padding: 12px 16px;
-
-      background: #cc0000;
+      background: #000;
     }
 
     .faq-question {
       width: 100%;
-
       display: flex;
       align-items: center;
       justify-content: space-between;
-
       text-align: left;
-
       background: none;
-
       border: none;
-
       cursor: pointer;
-
-      color: #ffffff;
-
+      color: #fff;
       font-weight: 600;
       font-size: 16px;
     }
 
     .faq-icon {
       color: rgba(255, 255, 255, 0.7);
-
       margin-left: 12px;
-
       flex-shrink: 0;
-
-      transition:
-        transform 0.2s ease;
-
+      transition: transform 0.2s ease;
       font-size: 20px;
-
       line-height: 1;
     }
 
@@ -393,13 +212,9 @@
 
     .faq-answer {
       display: none;
-
       margin-top: 8px;
-
       font-size: 14px;
-
-      color: rgba(255, 255, 255, 0.9);
-
+      color: rgba(255, 255, 255, 0.8);
       line-height: 1.55;
     }
 
@@ -407,26 +222,13 @@
       display: block;
     }
 
-    /* =========================
-       DESKTOP
-    ========================= */
-
     @media (min-width: 768px) {
-
       h1 {
         font-size: 30px;
       }
 
-      .hero-image {
-        width: 125px;
-      }
-
       .claim-button-text {
         font-size: 20px;
-      }
-
-      .testimonial-text {
-        font-size: 16px;
       }
 
       .faq-section {
@@ -436,488 +238,120 @@
       .faq-section h2 {
         font-size: 30px;
       }
-
     }
   </style>
 </head>
 
 <body>
-
-  <!-- =========================
-       TOP BAR
-  ========================== -->
-
   <div class="top-bar">
     14,500+ People Already Claimed
   </div>
 
-
-  <!-- =========================
-       MAIN PAGE
-  ========================== -->
-
   <main class="page">
-
-
-    <!-- TARGET LOGO -->
-
     <div class="image-wrapper">
-
       <img
-        src="target logo.png"
-        alt="Target"
+        src="/apple.png"
+        alt="Apple Cash"
         class="hero-image"
       />
-
     </div>
 
-
-    <!-- HEADLINE -->
-
-    <h1>
-      $750 Target Coupon
-    </h1>
-
-
-    <!-- STEPS -->
+    <h1>$750 Apple Cash</h1>
 
     <section class="steps-card">
-
       <div class="steps">
-
-
         <div class="step">
-
-          <div class="step-number">
-            1
-          </div>
-
-          <h3>
-            Enter your email and basic info
-          </h3>
-
+          <div class="step-number">1</div>
+          <h3>Enter your email and basic info</h3>
         </div>
 
-
         <div class="step">
-
-          <div class="step-number">
-            2
-          </div>
-
-          <h3>
-            Complete 3-5 sponsored deals
-          </h3>
-
+          <div class="step-number">2</div>
+          <h3>Complete 3-5 sponsored deals</h3>
         </div>
 
-
         <div class="step">
-
-          <div class="step-number">
-            3
-          </div>
-
-          <h3>
-            Receive your $750 Target Coupon!
-          </h3>
-
+          <div class="step-number">3</div>
+          <h3>Receive your $750 Apple Cash!</h3>
         </div>
-
-
       </div>
-
     </section>
 
-
-    <!-- CTA -->
-
-    <button
-      class="claim-button"
-      id="claimButton"
-    >
-
-      <div class="claim-button-text">
-        Claim My $750 →
-      </div>
-
+    <button class="claim-button" id="claimButton">
+      <div class="claim-button-text">Claim My $750 →</div>
     </button>
 
 
-    <!-- =========================
-         TESTIMONIAL BAR
-    ========================== -->
-
-    <div class="testimonial-wrapper">
-
-      <div
-        class="testimonial-card"
-        id="testimonialCard"
-      >
-
-        <div class="testimonial-inner">
-
-          <span class="testimonial-dot"></span>
-
-          <p
-            class="testimonial-text"
-            id="testimonialText"
-          ></p>
-
-        </div>
-
-      </div>
-
-    </div>
-
-
-    <!-- =========================
-         FAQ
-    ========================== -->
-
     <section class="faq-section">
-
-      <h2>
-        Common Questions
-      </h2>
+      <h2>Common Questions</h2>
 
       <div class="faq-list">
-
-
-        <!-- QUESTION 1 -->
-
         <div class="faq-item">
-
           <button class="faq-question">
-
-            <span>
-              How long do the deals take?
-            </span>
-
-            <span class="faq-icon">
-              +
-            </span>
-
+            <span>How long do the deals take?</span>
+            <span class="faq-icon">+</span>
           </button>
-
           <p class="faq-answer">
-            Most deals take just a few minutes to complete.
-            You can finish them at your own pace once you've registered.
+            Most deals take just a few minutes to complete. You can finish them at your own pace with no time limit once you've registered.
           </p>
-
         </div>
 
-
-        <!-- QUESTION 2 -->
-
         <div class="faq-item">
-
           <button class="faq-question">
-
-            <span>
-              What are deals?
-            </span>
-
-            <span class="faq-icon">
-              +
-            </span>
-
+            <span>What are deals?</span>
+            <span class="faq-icon">+</span>
           </button>
-
           <p class="faq-answer">
-            Deals are sponsored offers from partner brands like
-            downloading apps, trials, sign-ups, or surveys.
-            They are how the coupon is funded.
+            Deals are sponsored offers from partner brands — things like downloading apps, free trials, sign-ups, or short surveys. They're how your Apple Cash is funded.
           </p>
-
         </div>
 
-
-        <!-- QUESTION 3 -->
-
         <div class="faq-item">
-
           <button class="faq-question">
-
-            <span>
-              How many deals do I have to do?
-            </span>
-
-            <span class="faq-icon">
-              +
-            </span>
-
+            <span>How many deals do I have to do?</span>
+            <span class="faq-icon">+</span>
           </button>
-
           <p class="faq-answer">
-            We recommend completing 3-5 deals to qualify.
-            The more you complete, the higher your coupon value
-            climbs - up to $750.
+            We recommend completing 3-5 deals. The more you complete, the higher your Apple Cash value climbs — up to $750.
           </p>
-
         </div>
 
-
-        <!-- QUESTION 4 -->
-
         <div class="faq-item">
-
           <button class="faq-question">
-
-            <span>
-              When will I receive my Target Coupon?
-            </span>
-
-            <span class="faq-icon">
-              +
-            </span>
-
+            <span>When will I receive my Apple Cash?</span>
+            <span class="faq-icon">+</span>
           </button>
-
           <p class="faq-answer">
-            Once your deals are completed, your Target coupon code
-            will be delivered to your email instantly.
+            Once your deals are verified, you will receive your Apple Cash instantly.
           </p>
-
         </div>
-
-
       </div>
-
     </section>
-
-
   </main>
 
-
   <script>
+    const baseUrl = "https://giftclick.org/aff_c?offer_id=2596&aff_id=150406";
 
-    /* =========================================
-       AFFILIATE URL
-    ========================================= */
+    document.getElementById("claimButton").addEventListener("click", function () {
+      const params = new URLSearchParams(window.location.search);
+      const sourceValue = params.get("source");
 
-    const baseUrl =
-      "https://giftclick.org/aff_c?offer_id=1178&aff_id=150406";
+      const finalUrl = sourceValue
+        ? `${baseUrl}&source=${encodeURIComponent(sourceValue)}`
+        : baseUrl;
 
-
-    /* =========================================
-       CLAIM BUTTON
-       FORWARD SOURCE PARAMETER
-    ========================================= */
-
-    document
-      .getElementById("claimButton")
-      .addEventListener("click", function () {
-
-        const params =
-          new URLSearchParams(
-            window.location.search
-          );
-
-        const sourceValue =
-          params.get("source");
-
-        const finalUrl =
-          sourceValue
-            ? `${baseUrl}&source=${encodeURIComponent(sourceValue)}`
-            : baseUrl;
-
-        window.location.href =
-          finalUrl;
-
-      });
-
-
-    /* =========================================
-       EXACT TESTIMONIALS PROVIDED
-    ========================================= */
-
-    const notifications = [
-
-      `
-        Olivia claimed
-        <span class="testimonial-amount">$750</span>
-        for completing 5 deals
-      `,
-
-      `
-        Charlotte received
-        <span class="testimonial-amount">$650</span>
-        for doing 4 deals
-      `,
-
-      `
-        Amelia received
-        <span class="testimonial-amount">$500</span>
-        for completing 4 deals
-      `,
-
-      `
-        Isla claimed
-        <span class="testimonial-amount">$650</span>
-        for doing 4 deals
-      `,
-
-      `
-        Ava claimed
-        <span class="testimonial-amount">$750</span>
-        for doing 5 deals
-      `,
-
-      `
-        Noah received
-        <span class="testimonial-amount">$750</span>
-        for completing 5 deals
-      `,
-
-      `
-        Grace claimed
-        <span class="testimonial-amount">$500</span>
-        for doing 3 deals
-      `,
-
-      `
-        Willow received
-        <span class="testimonial-amount">$650</span>
-        for completing 4 deals
-      `,
-
-      `
-        Harper claimed
-        <span class="testimonial-amount">$750</span>
-        for completing 5 deals
-      `,
-
-      `
-        Chloe claimed
-        <span class="testimonial-amount">$500</span>
-        for doing 3 deals
-      `
-
-    ];
-
-
-    let currentIndex = 0;
-
-    let visible = false;
-
-
-    const testimonialCard =
-      document.getElementById(
-        "testimonialCard"
-      );
-
-
-    const testimonialText =
-      document.getElementById(
-        "testimonialText"
-      );
-
-
-    /* =========================================
-       DISPLAY CURRENT TESTIMONIAL
-    ========================================= */
-
-    function updateNotification() {
-
-      testimonialText.innerHTML =
-        notifications[currentIndex];
-
-    }
-
-
-    /* Set first testimonial immediately,
-       but keep it hidden until 1.5 seconds */
-
-    updateNotification();
-
-
-    /* =========================================
-       SHOW AFTER 1.5 SECONDS
-       SAME AS PROVIDED REACT CODE
-    ========================================= */
-
-    const showTimer =
-      setTimeout(function () {
-
-        visible = true;
-
-        testimonialCard.classList.add(
-          "visible"
-        );
-
-      }, 1500);
-
-
-    /* =========================================
-       CYCLE EVERY 9 SECONDS
-       HIDE -> WAIT 350ms -> CHANGE -> SHOW
-       SAME AS PROVIDED CODE
-    ========================================= */
-
-    const cycleTimer =
-      setInterval(function () {
-
-        visible = false;
-
-        testimonialCard.classList.remove(
-          "visible"
-        );
-
-
-        setTimeout(function () {
-
-          currentIndex =
-            (currentIndex + 1)
-            % notifications.length;
-
-
-          updateNotification();
-
-
-          visible = true;
-
-          testimonialCard.classList.add(
-            "visible"
-          );
-
-        }, 350);
-
-      }, 9000);
-
-
-    /* =========================================
-       FAQ
-    ========================================= */
-
-    const faqItems =
-      document.querySelectorAll(
-        ".faq-item"
-      );
-
-
-    faqItems.forEach(function (item) {
-
-      const button =
-        item.querySelector(
-          ".faq-question"
-        );
-
-
-      button.addEventListener(
-        "click",
-        function () {
-
-          item.classList.toggle(
-            "open"
-          );
-
-        }
-      );
-
+      window.location.href = finalUrl;
     });
 
-  </script>
+    const faqItems = document.querySelectorAll(".faq-item");
 
+    faqItems.forEach(function (item) {
+      const button = item.querySelector(".faq-question");
+
+      button.addEventListener("click", function () {
+        item.classList.toggle("open");
+      });
+    });
+  </script>
 </body>
 </html>
