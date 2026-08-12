@@ -118,22 +118,23 @@
     }
 
     .claim-button {
-  width: 100%;
-  max-width: 448px;
-  font-weight: 600;
-  padding: 20px 24px;
-  border-radius: 999px;
-  margin-bottom: 12px;
-  background: #000;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18);
-}
+      width: 100%;
+      max-width: 448px;
+      font-weight: 600;
+      padding: 20px 24px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+      background: #000;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18);
+      transition: transform 0.2s ease;
+    }
 
     .claim-button:hover {
       transform: scale(1.02);
@@ -145,11 +146,61 @@
       font-size: 18px;
     }
 
-   
+    /* NEW: CTA subtext */
+    .cta-subtext {
+      font-size: 14px;
+      color: #4b5563;
+      text-align: center;
+      margin-bottom: 16px;
+    }
 
+    /* NEW: rotating testimonial */
+    .testimonial-wrapper {
+      width: 100%;
+      max-width: 512px;
+      margin-bottom: 8px;
+    }
 
+    .testimonial-bar {
+      border-radius: 16px;
+      border: 1px solid #e5e7eb;
+      background: #fff;
+      padding: 12px 16px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.10);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
 
-   
+    .testimonial-bar.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .testimonial-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: #000;
+      flex-shrink: 0;
+    }
+
+    .testimonial-text {
+      font-size: 14px;
+      font-weight: 600;
+      color: #000;
+      line-height: 1.4;
+    }
+
+    .testimonial-amount {
+      color: #22c55e;
+      font-weight: 600;
+    }
 
     .faq-section {
       margin-top: 40px;
@@ -231,6 +282,10 @@
         font-size: 20px;
       }
 
+      .testimonial-text {
+        font-size: 16px;
+      }
+
       .faq-section {
         padding: 28px;
       }
@@ -281,6 +336,18 @@
       <div class="claim-button-text">Claim My $750 →</div>
     </button>
 
+    <!-- NEW: subtext below CTA -->
+    <p class="cta-subtext">
+      Higher value deals = higher payout
+    </p>
+
+    <!-- NEW: rotating testimonial bar -->
+    <div class="testimonial-wrapper">
+      <div class="testimonial-bar" id="testimonialBar">
+        <span class="testimonial-dot"></span>
+        <p class="testimonial-text" id="testimonialText"></p>
+      </div>
+    </div>
 
     <section class="faq-section">
       <h2>Common Questions</h2>
@@ -330,18 +397,21 @@
   </main>
 
   <script>
-    const baseUrl = "https://giftclick.org/aff_c?offer_id=2596&aff_id=150406";
+    const baseUrl =
+      "https://giftclick.org/aff_c?offer_id=2596&aff_id=150406";
 
-    document.getElementById("claimButton").addEventListener("click", function () {
-      const params = new URLSearchParams(window.location.search);
-      const sourceValue = params.get("source");
+    document
+      .getElementById("claimButton")
+      .addEventListener("click", function () {
+        const params = new URLSearchParams(window.location.search);
+        const sourceValue = params.get("source");
 
-      const finalUrl = sourceValue
-        ? `${baseUrl}&source=${encodeURIComponent(sourceValue)}`
-        : baseUrl;
+        const finalUrl = sourceValue
+          ? `${baseUrl}&source=${encodeURIComponent(sourceValue)}`
+          : baseUrl;
 
-      window.location.href = finalUrl;
-    });
+        window.location.href = finalUrl;
+      });
 
     const faqItems = document.querySelectorAll(".faq-item");
 
@@ -352,6 +422,41 @@
         item.classList.toggle("open");
       });
     });
+
+    /* NEW: testimonial rotation */
+    const notifications = [
+      `Olivia claimed <span class="testimonial-amount">$750</span> for completing 5 deals`,
+      `Charlotte received <span class="testimonial-amount">$650</span> for doing 4 deals`,
+      `Amelia received <span class="testimonial-amount">$500</span> for completing 4 deals`,
+      `Isla claimed <span class="testimonial-amount">$650</span> for doing 4 deals`,
+      `Ava claimed <span class="testimonial-amount">$750</span> for doing 5 deals`,
+      `Noah received <span class="testimonial-amount">$750</span> for completing 5 deals`,
+      `Grace claimed <span class="testimonial-amount">$500</span> for doing 3 deals`,
+      `Willow received <span class="testimonial-amount">$650</span> for completing 4 deals`,
+      `Harper claimed <span class="testimonial-amount">$750</span> for completing 5 deals`,
+      `Chloe claimed <span class="testimonial-amount">$500</span> for doing 3 deals`
+    ];
+
+    const testimonialBar = document.getElementById("testimonialBar");
+    const testimonialText = document.getElementById("testimonialText");
+
+    let currentIndex = 0;
+
+    testimonialText.innerHTML = notifications[currentIndex];
+
+    setTimeout(function () {
+      testimonialBar.classList.add("visible");
+    }, 1500);
+
+    setInterval(function () {
+      testimonialBar.classList.remove("visible");
+
+      setTimeout(function () {
+        currentIndex = (currentIndex + 1) % notifications.length;
+        testimonialText.innerHTML = notifications[currentIndex];
+        testimonialBar.classList.add("visible");
+      }, 350);
+    }, 9000);
   </script>
 </body>
 </html>
