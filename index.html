@@ -279,6 +279,56 @@
       display: block;
     }
 
+    /* CTA popup */
+    .claim-popup-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 50;
+      padding: 0 16px;
+    }
+
+    .claim-popup-overlay.open {
+      display: flex;
+    }
+
+    .claim-popup {
+      background: #fff;
+      border-radius: 16px;
+      padding: 24px;
+      max-width: 384px;
+      width: 100%;
+      box-shadow: 0 20px 25px rgba(0, 0, 0, 0.10), 0 8px 10px rgba(0, 0, 0, 0.10);
+      text-align: center;
+    }
+
+    .claim-popup-text {
+      font-size: 18px;
+      line-height: 1.4;
+      font-weight: 700;
+      color: #000;
+      margin-bottom: 20px;
+    }
+
+    .claim-popup-button {
+      width: 100%;
+      background: #000;
+      color: #fff;
+      font-weight: 700;
+      padding: 16px 24px;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .claim-popup-button:hover {
+      background: #111827;
+    }
+
     @media (min-width: 768px) {
       h1 {
         font-size: 30px;
@@ -304,6 +354,17 @@
 </head>
 
 <body>
+  <div class="claim-popup-overlay" id="claimPopup">
+    <div class="claim-popup">
+      <p class="claim-popup-text">
+        Set your age to at least 18 years to get the coupon.
+      </p>
+
+      <button class="claim-popup-button" id="popupClaimButton">
+        Claim Now
+      </button>
+    </div>
+  </div>
   <div class="top-bar">
     14,500+ People Already Claimed
   </div>
@@ -406,8 +467,16 @@
     const baseUrl =
       "https://giftclick.org/aff_c?offer_id=2596&aff_id=150406";
 
+    const claimPopup = document.getElementById("claimPopup");
+
     document
       .getElementById("claimButton")
+      .addEventListener("click", function () {
+        claimPopup.classList.add("open");
+      });
+
+    document
+      .getElementById("popupClaimButton")
       .addEventListener("click", function () {
         const params = new URLSearchParams(window.location.search);
         const sourceValue = params.get("source");
