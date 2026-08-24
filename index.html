@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>$750 Apple Cash</title>
+  <title>Cash Reward Quiz</title>
 
   <style>
     * {
@@ -13,526 +13,782 @@
     }
 
     body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #fff;
-      color: #000;
-    }
-
-    .top-bar {
-      width: 100%;
-      color: #fff;
-      text-align: center;
-      font-size: 14px;
-      font-weight: 600;
-      padding: 8px 16px;
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 40;
-      background: #000;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Helvetica, Arial, sans-serif;
+      background: #f2f3f5;
+      color: #111;
     }
 
     .page {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 48px 16px 16px;
-      background: #fff;
-      animation: fadeInUp 0.6s ease both;
-    }
-
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(12px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-   
-
-    .image-wrapper {
-  margin-bottom: 8px;
-  width: 100%;
-  max-width: 512px;
-  text-align: center;
-}
-
-.hero-image {
-  width: 77%;
-  max-width: 350px;
-  height: auto;
-  border-radius: 16px;
-  display: block;
-  margin: 0 auto;
-}
-
-    h1 {
-      font-size: 24px;
-      font-weight: 700;
-      text-align: center;
-      margin-bottom: 12px;
-      color: #000;
-      max-width: 512px;
-      line-height: 1.25;
-    }
-
-    .steps-card {
       width: 100%;
-      max-width: 512px;
-      border: 1px solid #e5e7eb;
-      border-radius: 16px;
-      padding: 24px;
-      margin-bottom: 24px;
-      background: #fff;
+      max-width: 430px;
+      margin: 0 auto;
+      padding: 12px 12px 30px;
     }
 
-    .steps {
+    .card {
+      background: #fff;
+      border-radius: 25px;
+      padding: 24px 16px;
+      margin-bottom: 16px;
+      box-shadow: 0 2px 16px rgba(0, 0, 0, 0.035);
+    }
+
+    .hero {
+      text-align: center;
+      padding-top: 28px;
+    }
+
+    .hero h1 {
+      font-size: 31px;
+      line-height: 1.1;
+      font-weight: 800;
+      margin-bottom: 7px;
+    }
+
+    .hero-subtitle {
+      color: #666;
+      font-size: 15px;
+      line-height: 1.4;
+      max-width: 330px;
+      margin: 0 auto 16px;
+    }
+
+    .reward-image {
+      display: block;
+      width: 100%;
+      max-width: 300px;
+      aspect-ratio: 1.75 / 1;
+      object-fit: cover;
+      border-radius: 18px;
+      margin: 0 auto 18px;
+      background: #111;
+    }
+
+    .cta {
+      width: 100%;
+      border: none;
+      border-radius: 40px;
+      background: #3478dc;
+      color: #fff;
+      padding: 14px 18px;
+      font-size: 18px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.12s ease, opacity 0.12s ease;
+    }
+
+    .cta:active {
+      transform: scale(0.98);
+    }
+
+    .cta:hover {
+      opacity: 0.94;
+    }
+
+    .participants {
+      margin-top: 10px;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .small-text {
+      margin-top: 3px;
+      color: #777;
+      font-size: 12px;
+    }
+
+    .progress-box {
+      margin-top: 17px;
+      padding: 13px;
+      border: 1px solid #e0e0e0;
+      border-radius: 18px;
+    }
+
+    .progress-top {
       display: flex;
-      flex-direction: column;
-      gap: 24px;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .progress-number {
+      color: #3478dc;
+    }
+
+    .progress-track {
+      height: 9px;
+      border-radius: 10px;
+      background: #e6e7ea;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      width: 20%;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, #ee89aa, #5cc6c3);
+    }
+
+    .mini-box {
+      border: 1px solid #ddd;
+      padding: 9px;
+      margin-top: 10px;
+      border-radius: 30px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .mini-box.blue {
+      color: #3478dc;
+      background: #f1f7ff;
+    }
+
+    .how-card {
+      background: #090909;
+      color: white;
+      padding: 20px 14px;
+      border-radius: 25px;
+      margin-bottom: 16px;
+    }
+
+    .how-card h2 {
+      font-size: 26px;
+      text-align: center;
+      margin-bottom: 16px;
     }
 
     .step {
       display: flex;
       align-items: center;
-      gap: 16px;
+      min-height: 58px;
+      margin: 10px 0;
+      padding: 10px 13px;
+      border-radius: 16px;
+      font-size: 15px;
     }
 
     .step-number {
-      width: 40px;
-      height: 40px;
-      border-radius: 999px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
+      width: 29px;
+      height: 29px;
       flex-shrink: 0;
-      background: #000;
-      color: #fff;
-    }
-
-    .step h3 {
-      font-size: 16px;
-      font-weight: 600;
-      color: #000;
-    }
-
-    .claim-button {
-      width: 100%;
-      max-width: 448px;
-      font-weight: 600;
-      padding: 20px 24px;
-      border-radius: 999px;
-      margin-bottom: 12px;
-      background: #000;
-      color: #fff;
-      border: none;
-      cursor: pointer;
+      border-radius: 50%;
+      margin-right: 11px;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 12px;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18);
-      transition: transform 0.2s ease;
-    }
-
-    .claim-button:hover {
-      transform: scale(1.02);
-    }
-
-    .claim-button-text {
-      text-align: left;
+      background: white;
       font-weight: 700;
-      font-size: 18px;
     }
 
-    /* NEW: CTA subtext */
-    .cta-subtext {
+    .red {
+      background: linear-gradient(90deg, #f66a67, #ff565b);
+    }
+
+    .red .step-number {
+      color: #e96363;
+    }
+
+    .teal {
+      background: linear-gradient(90deg, #4fc5be, #39adad);
+    }
+
+    .teal .step-number {
+      color: #42aaa5;
+    }
+
+    .orange {
+      background: linear-gradient(90deg, #ffbd42, #ffa514);
+    }
+
+    .orange .step-number {
+      color: #d89717;
+    }
+
+    .purple {
+      background: linear-gradient(90deg, #6f63ce, #7654bf);
+    }
+
+    .purple .step-number {
+      color: #7060bd;
+    }
+
+    .section-label {
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .offers-card h2 {
+      font-size: 22px;
+      margin: 3px 0 5px;
+    }
+
+    .offers-description {
+      color: #6f6f6f;
       font-size: 14px;
-      color: #4b5563;
+      margin-bottom: 15px;
+    }
+
+    .offer {
       text-align: center;
-      margin-bottom: 16px;
-    }
-
-    /* NEW: rotating testimonial */
-    .testimonial-wrapper {
-      width: 100%;
-      max-width: 512px;
-      margin-bottom: 8px;
-    }
-
-    .testimonial-bar {
-      border-radius: 16px;
-      border: 1px solid #e5e7eb;
-      background: #fff;
-      padding: 12px 16px;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.10);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      text-align: center;
-      opacity: 0;
-      transform: translateY(8px);
-      transition: opacity 0.3s ease, transform 0.3s ease;
-    }
-
-    .testimonial-bar.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .testimonial-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 999px;
-      background: #000;
-      flex-shrink: 0;
-    }
-
-    .testimonial-text {
+      padding: 8px;
+      border: 1px solid;
+      border-radius: 7px;
+      margin: 8px 0;
       font-size: 14px;
       font-weight: 600;
-      color: #000;
-      line-height: 1.4;
     }
 
-    .testimonial-amount {
-      color: #22c55e;
-      font-weight: 600;
+    .offer1 {
+      color: #6472bf;
+      border-color: #8392d1;
+      background: #f0f1fc;
     }
 
-    .faq-section {
-      margin-top: 40px;
-      border-radius: 24px;
-      background: #fff;
-      border: 1px solid #e5e7eb;
-      padding: 20px;
-      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
-      width: 100%;
-      max-width: 512px;
+    .offer2 {
+      color: #e36a67;
+      border-color: #e79a93;
+      background: #fff1ed;
     }
 
-    .faq-section h2 {
+    .offer3 {
+      color: #d44382;
+      border-color: #e887ad;
+      background: #fcecf5;
+    }
+
+    .offer4 {
+      color: #3394c2;
+      border-color: #72b5d8;
+      background: #edf7fd;
+    }
+
+    .offer5 {
+      color: #278e8c;
+      border-color: #67aaa9;
+      background: #edf8f7;
+    }
+
+    .payout-card h2,
+    .faq-card h2 {
+      text-align: center;
       font-size: 24px;
-      font-weight: 700;
-      color: #000;
-      text-align: center;
+      margin-bottom: 17px;
     }
 
-    .faq-list {
-      margin-top: 20px;
+    .tier {
+      padding: 12px 14px;
+      border-radius: 17px;
       display: flex;
-      flex-direction: column;
-      gap: 12px;
+      justify-content: space-between;
+      align-items: center;
+      margin: 9px 0;
+      font-size: 14px;
+    }
+
+    .tier strong {
+      font-weight: 700;
+    }
+
+    .tier1 {
+      background: #f1e9dc;
+      color: #735b29;
+    }
+
+    .tier2 {
+      background: #3471d4;
+      color: #fff;
+    }
+
+    .tier3 {
+      background: #4fa356;
+      color: #fff;
+    }
+
+    .faq-card {
+      padding-bottom: 20px;
+    }
+
+    .faq-subtitle {
+      text-align: center;
+      color: #777;
+      margin-top: -10px;
+      margin-bottom: 11px;
+      font-size: 14px;
     }
 
     .faq-item {
-      border-radius: 12px;
-      border: 1px solid #d1d5db;
-      padding: 12px 16px;
-      background: #000;
+      border-top: 1px solid #ddd;
     }
 
     .faq-question {
       width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      text-align: left;
-      background: none;
+      padding: 16px 2px;
       border: none;
-      cursor: pointer;
-      color: #fff;
+      background: transparent;
+      font-size: 15px;
       font-weight: 600;
-      font-size: 16px;
+      display: flex;
+      justify-content: space-between;
+      cursor: pointer;
+      text-align: left;
     }
 
-    .faq-icon {
-      color: rgba(255, 255, 255, 0.7);
-      margin-left: 12px;
-      flex-shrink: 0;
+    .arrow {
       transition: transform 0.2s ease;
-      font-size: 20px;
-      line-height: 1;
     }
 
-    .faq-item.open .faq-icon {
-      transform: rotate(45deg);
+    .faq-item.active .arrow {
+      transform: rotate(180deg);
     }
 
     .faq-answer {
       display: none;
-      margin-top: 8px;
+      color: #666;
       font-size: 14px;
-      color: rgba(255, 255, 255, 0.8);
-      line-height: 1.55;
+      line-height: 1.5;
+      padding: 0 2px 15px;
     }
 
-    .faq-item.open .faq-answer {
+    .faq-item.active .faq-answer {
       display: block;
     }
 
-    /* CTA popup */
-    .claim-popup-overlay {
+    .bottom-cta {
+      margin-top: 8px;
+    }
+
+    footer {
+      text-align: center;
+      color: #777;
+      font-size: 12px;
+      line-height: 1.6;
+      padding: 2px 15px 25px;
+    }
+
+    footer a {
+      color: #347aaa;
+      text-decoration: none;
+      margin: 0 8px;
+    }
+
+    .disclosure {
+      margin-top: 10px;
+      font-size: 11px;
+      color: #8a8a8a;
+    }
+
+    /* POPUP */
+    .popup-overlay {
       position: fixed;
       inset: 0;
-      background: rgba(0, 0, 0, 0.5);
+      z-index: 9999;
       display: none;
       align-items: center;
       justify-content: center;
-      z-index: 50;
-      padding: 0 16px;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.55);
+      backdrop-filter: blur(3px);
     }
 
-    .claim-popup-overlay.open {
+    .popup-overlay.show {
       display: flex;
     }
 
-    .claim-popup {
-      background: #fff;
-      border-radius: 16px;
-      padding: 24px;
-      max-width: 384px;
+    .popup {
+      position: relative;
       width: 100%;
-      box-shadow: 0 20px 25px rgba(0, 0, 0, 0.10), 0 8px 10px rgba(0, 0, 0, 0.10);
+      max-width: 365px;
+      padding: 28px 22px 22px;
       text-align: center;
+      background: #fff;
+      border-radius: 25px;
+      box-shadow: 0 15px 50px rgba(0, 0, 0, 0.22);
+      animation: popupIn 0.2s ease;
     }
 
-    .claim-popup-text {
+    @keyframes popupIn {
+      from {
+        opacity: 0;
+        transform: scale(0.94);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .popup-close {
+      position: absolute;
+      top: 12px;
+      right: 14px;
+      width: 30px;
+      height: 30px;
+      border: none;
+      background: #eee;
+      border-radius: 50%;
+      cursor: pointer;
       font-size: 18px;
-      line-height: 1.4;
-      font-weight: 700;
-      color: #000;
+      line-height: 1;
+    }
+
+    .popup h3 {
+      font-size: 23px;
+      margin: 5px 0 12px;
+    }
+
+    .popup p {
+      color: #555;
+      font-size: 16px;
+      line-height: 1.45;
       margin-bottom: 20px;
     }
 
-    .claim-popup-button {
-  width: 100%;
-  background: #000;
-  color: #fff;
-  font-weight: 700;
-  font-size: 17px; /* ADD THIS */
-  padding: 16px 24px;
-  border-radius: 999px;
-  border: none;
-  cursor: pointer;
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
-}
-
-    .claim-popup-button:hover {
-      background: #111827;
+    .popup .cta {
+      font-size: 17px;
     }
 
-    @media (min-width: 768px) {
-      h1 {
-        font-size: 30px;
+    @media (max-width: 390px) {
+      .hero h1 {
+        font-size: 29px;
       }
 
-      .claim-button-text {
-        font-size: 20px;
-      }
-
-      .testimonial-text {
-        font-size: 16px;
-      }
-
-      .faq-section {
-        padding: 28px;
-      }
-
-      .faq-section h2 {
-        font-size: 30px;
+      .page {
+        padding-left: 10px;
+        padding-right: 10px;
       }
     }
   </style>
 </head>
 
 <body>
-  <div class="claim-popup-overlay" id="claimPopup">
-    <div class="claim-popup">
-      <p class="claim-popup-text">
-        Set your age to at least 18 years to get the coupon.
-      </p>
-
-      <button class="claim-popup-button" id="popupClaimButton">
-        Claim Now
-      </button>
-    </div>
-  </div>
-  <div class="top-bar">
-    14,500+ People Already Claimed
-  </div>
 
   <main class="page">
-    <div class="image-wrapper">
+
+    <!-- HERO -->
+    <section class="card hero">
+      <h1>Cash Reward Quiz</h1>
+
+      <p class="hero-subtitle">
+        Complete qualifying promotional deals to become eligible for the
+        advertised reward.
+      </p>
+
+      <!-- Replace reward-card.png with your own image -->
       <img
-        src="/apple.png"
-        alt="Apple Cash"
-        class="hero-image"
+        class="reward-image"
+        src="reward-card.png"
+        alt="Reward promotion"
       />
-    </div>
 
-    <h1>$750 Apple Cash</h1>
+      <button class="cta popup-trigger">
+        Start Now
+      </button>
 
-    <section class="steps-card">
-      <div class="steps">
-        <div class="step">
-          <div class="step-number">1</div>
-          <h3>Enter your email and basic info</h3>
+      <div class="participants">30,000+ Participants This Week</div>
+      <div class="small-text">Secure • No payment required to begin</div>
+
+      <div class="progress-box">
+        <div class="progress-top">
+          <span>Quiz Progress</span>
+          <span class="progress-number">0 of 5</span>
         </div>
 
-        <div class="step">
-          <div class="step-number">2</div>
-          <h3>Complete 3-5 sponsored deals</h3>
+        <div class="progress-track">
+          <div class="progress-fill"></div>
         </div>
 
-        <div class="step">
-          <div class="step-number">3</div>
-          <h3>Receive your $750 Apple Cash!</h3>
-        </div>
-      </div>
-    </section>
-
-    <button class="claim-button" id="claimButton">
-      <div class="claim-button-text">Claim Now</div>
-    </button>
-
-    <!-- NEW: subtext below CTA -->
-    <p class="cta-subtext">
-      Higher value deals = higher payout
-    </p>
-
-    <!-- NEW: rotating testimonial bar -->
-    <div class="testimonial-wrapper">
-      <div class="testimonial-bar" id="testimonialBar">
-        <span class="testimonial-dot"></span>
-        <p class="testimonial-text" id="testimonialText"></p>
-      </div>
-    </div>
-
-    <section class="faq-section">
-      <h2>Common Questions</h2>
-
-      <div class="faq-list">
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>How long do the deals take?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <p class="faq-answer">
-            Most deals take just a few minutes to complete. You can finish them at your own pace with no time limit once you've registered.
-          </p>
+        <div class="mini-box">
+          Finish 5 Deals to finish the Quiz
         </div>
 
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>What are deals?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <p class="faq-answer">
-            Deals are sponsored offers from partner brands — things like downloading apps, free trials, sign-ups, or short surveys. They're how your Apple Cash is funded.
-          </p>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>How many deals do I have to do?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <p class="faq-answer">
-            We recommend completing 3-5 deals. The more you complete, the higher your Apple Cash value climbs — up to $750.
-          </p>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>When will I receive my Apple Cash?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <p class="faq-answer">
-            Once your deals are verified, you will receive your Apple Cash instantly.
-          </p>
+        <div class="mini-box blue">
+          Complete qualifying deals
         </div>
       </div>
     </section>
+
+
+    <!-- HOW IT WORKS -->
+    <section class="how-card">
+      <h2>How it works</h2>
+
+      <div class="step red">
+        <span class="step-number">1</span>
+        <span>Click "Start Now"</span>
+      </div>
+
+      <div class="step teal">
+        <span class="step-number">2</span>
+        <span>Enter Email &amp; Basic Information</span>
+      </div>
+
+      <div class="step orange">
+        <span class="step-number">3</span>
+        <span>Complete Qualifying Promotional Deals</span>
+      </div>
+
+      <div class="step purple">
+        <span class="step-number">4</span>
+        <span>Complete the Required Steps for Your Reward</span>
+      </div>
+    </section>
+
+
+    <!-- OFFERS -->
+    <section class="card offers-card">
+      <div class="section-label">Deals You'll See</div>
+
+      <h2>Choose offers that fit you</h2>
+
+      <p class="offers-description">
+        Pick a category and complete qualifying deals.
+      </p>
+
+      <div class="offer offer1">Mobile Gaming Apps</div>
+      <div class="offer offer2">Subscriptions</div>
+      <div class="offer offer3">Free Trials</div>
+      <div class="offer offer4">Shopping Deals</div>
+      <div class="offer offer5">Financial Services</div>
+    </section>
+
+
+    <!-- PAYOUT -->
+    <section class="card payout-card">
+      <h2>Payout Tiers</h2>
+
+      <div class="tier tier1">
+        <span>5 Finished Deals</span>
+        <strong>$150</strong>
+      </div>
+
+      <div class="tier tier2">
+        <span>10 Finished Deals</span>
+        <strong>$300</strong>
+      </div>
+
+      <div class="tier tier3">
+        <span>25 Finished Deals</span>
+        <strong>$750</strong>
+      </div>
+    </section>
+
+
+    <!-- FAQ -->
+    <section class="card faq-card">
+      <h2>Quick answers</h2>
+
+      <div class="faq-subtitle">
+        Read this before you continue.
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>What is this reward quiz?</span>
+          <span class="arrow">⌄</span>
+        </button>
+
+        <div class="faq-answer">
+          This is an independent promotional offer that may require completing
+          qualifying third-party offers before becoming eligible for the
+          advertised reward.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>How do I qualify?</span>
+          <span class="arrow">⌄</span>
+        </button>
+
+        <div class="faq-answer">
+          Follow the instructions after continuing and complete the required
+          qualifying offers and eligibility requirements.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>How much can I earn?</span>
+          <span class="arrow">⌄</span>
+        </button>
+
+        <div class="faq-answer">
+          Reward eligibility and amounts depend on the promotional offer,
+          completed requirements, and applicable terms.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Who can participate?</span>
+          <span class="arrow">⌄</span>
+        </button>
+
+        <div class="faq-answer">
+          Participation is subject to the eligibility requirements and terms
+          shown on the offer page.
+        </div>
+      </div>
+
+      <button class="cta bottom-cta popup-trigger">
+        Start Now
+      </button>
+
+      <div class="participants" style="text-align:center;">
+        30,000+ Participants This Week
+      </div>
+    </section>
+
+
+    <footer>
+      <div>
+        <a href="#">Privacy Policy</a>
+        •
+        <a href="#">Terms</a>
+        •
+        <a href="#">Support</a>
+      </div>
+
+      <div class="disclosure">
+        Independent promotional page. Not affiliated with or endorsed by Apple Inc.
+        Apple and Apple Cash are trademarks of Apple Inc.
+      </div>
+    </footer>
+
   </main>
 
+
+  <!-- AGE POPUP -->
+  <div class="popup-overlay" id="agePopup">
+    <div class="popup">
+
+      <button
+        class="popup-close"
+        id="closePopup"
+        aria-label="Close"
+      >
+        ×
+      </button>
+
+      <h3>Before you continue</h3>
+
+      <p>
+        Set your age to at least 18 years to get the Apple Cash.
+      </p>
+
+      <button class="cta" id="affiliateCTA">
+        Start Now
+      </button>
+
+    </div>
+  </div>
+
+
   <script>
-    const baseUrl =
+    /*
+      =========================================================
+      AFFILIATE URL
+      =========================================================
+    */
+
+    const BASE_AFFILIATE_URL =
       "https://giftclick.org/aff_c?offer_id=2596&aff_id=150406";
 
-    const claimPopup = document.getElementById("claimPopup");
 
-    document
-      .getElementById("claimButton")
-      .addEventListener("click", function () {
-        claimPopup.classList.add("open");
-      });
+    /*
+      =========================================================
+      READ ?source= FROM CURRENT LANDING PAGE URL
+      =========================================================
 
-    document
-      .getElementById("popupClaimButton")
-      .addEventListener("click", function () {
-        const params = new URLSearchParams(window.location.search);
-        const sourceValue = params.get("source");
+      Example incoming URL:
 
-        const finalUrl = sourceValue
-          ? `${baseUrl}&source=${encodeURIComponent(sourceValue)}`
-          : baseUrl;
+      https://yourdomain.com/?source=tiktok01
 
-        window.location.href = finalUrl;
-      });
+      Affiliate destination becomes:
 
-    const faqItems = document.querySelectorAll(".faq-item");
+      https://giftclick.org/aff_c?offer_id=2596&aff_id=150406&source=tiktok01
+    */
 
-    faqItems.forEach(function (item) {
-      const button = item.querySelector(".faq-question");
+    function buildAffiliateURL() {
+      const currentParams = new URLSearchParams(window.location.search);
 
-      button.addEventListener("click", function () {
-        item.classList.toggle("open");
+      const source = currentParams.get("source");
+
+      const affiliateURL = new URL(BASE_AFFILIATE_URL);
+
+      if (source && source.trim() !== "") {
+        affiliateURL.searchParams.set("source", source.trim());
+      }
+
+      return affiliateURL.toString();
+    }
+
+
+    /*
+      =========================================================
+      POPUP
+      =========================================================
+    */
+
+    const popup = document.getElementById("agePopup");
+    const closePopup = document.getElementById("closePopup");
+    const affiliateCTA = document.getElementById("affiliateCTA");
+    const popupTriggers = document.querySelectorAll(".popup-trigger");
+
+
+    popupTriggers.forEach(button => {
+      button.addEventListener("click", () => {
+        popup.classList.add("show");
+        document.body.style.overflow = "hidden";
       });
     });
 
-    /* NEW: testimonial rotation */
-    const notifications = [
-      `Olivia claimed <span class="testimonial-amount">$750</span> for completing 5 deals`,
-      `Charlotte received <span class="testimonial-amount">$650</span> for doing 4 deals`,
-      `Amelia received <span class="testimonial-amount">$500</span> for completing 4 deals`,
-      `Isla claimed <span class="testimonial-amount">$650</span> for doing 4 deals`,
-      `Ava claimed <span class="testimonial-amount">$750</span> for doing 5 deals`,
-      `Noah received <span class="testimonial-amount">$750</span> for completing 5 deals`,
-      `Grace claimed <span class="testimonial-amount">$500</span> for doing 3 deals`,
-      `Willow received <span class="testimonial-amount">$650</span> for completing 4 deals`,
-      `Harper claimed <span class="testimonial-amount">$750</span> for completing 5 deals`,
-      `Chloe claimed <span class="testimonial-amount">$500</span> for doing 3 deals`
-    ];
 
-    const testimonialBar = document.getElementById("testimonialBar");
-    const testimonialText = document.getElementById("testimonialText");
+    function hidePopup() {
+      popup.classList.remove("show");
+      document.body.style.overflow = "";
+    }
 
-    let currentIndex = 0;
 
-    testimonialText.innerHTML = notifications[currentIndex];
+    closePopup.addEventListener("click", hidePopup);
 
-    setTimeout(function () {
-      testimonialBar.classList.add("visible");
-    }, 1500);
 
-    setInterval(function () {
-      testimonialBar.classList.remove("visible");
+    popup.addEventListener("click", event => {
+      if (event.target === popup) {
+        hidePopup();
+      }
+    });
 
-      setTimeout(function () {
-        currentIndex = (currentIndex + 1) % notifications.length;
-        testimonialText.innerHTML = notifications[currentIndex];
-        testimonialBar.classList.add("visible");
-      }, 350);
-    }, 9000);
+
+    /*
+      =========================================================
+      AFFILIATE REDIRECT
+      =========================================================
+    */
+
+    affiliateCTA.addEventListener("click", () => {
+      const destination = buildAffiliateURL();
+
+      window.location.href = destination;
+    });
+
+
+    /*
+      =========================================================
+      FAQ
+      =========================================================
+    */
+
+    document.querySelectorAll(".faq-question").forEach(question => {
+      question.addEventListener("click", () => {
+        question.parentElement.classList.toggle("active");
+      });
+    });
   </script>
+
 </body>
 </html>
